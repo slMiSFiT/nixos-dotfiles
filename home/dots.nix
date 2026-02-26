@@ -16,9 +16,10 @@ in {
   home.file.".config/fastfetch".source = lnDots "/.config/fastfetch";
   home.file.".config/rofimoji.rc".source = lnDots "/.config/rofimoji.rc";
   home.file.".config/starship.toml".source = lnDots "/.config/starship.toml";
-  #home.file.".zshrc".source = lnDots ".zshrc";
+  home.file.".newsboat".source = lnDots "/.newsboat";
   home.file.".config/qutebrowser".source = lnDots "/.config/qutebrowser";
   home.file.".config/lazygit".source = lnDots "/.config/lazygit";
   ###
   home.file.".config/hypr".source = lnDots "/.config/hypr";
   }
+  #home.file.".zshrc".source = lnDots ".zshrc";
