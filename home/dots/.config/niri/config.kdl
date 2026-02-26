@@ -287,7 +287,7 @@ spawn-at-startup "mako"
 spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/gruvbox/agent.png"
 
 // autostart programs
-spawn-sh-at-startup "foot -T btop btop"
+spawn-sh-at-startup "foot -T newsboat newsboat -r"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -336,6 +336,7 @@ window-rule {
 window-rule {
     match app-id="foot"
     exclude title="btop"
+    exclude title="newsboat"
     open-maximized false
 }
 
