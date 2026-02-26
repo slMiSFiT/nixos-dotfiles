@@ -1,0 +1,48 @@
+[config]
+
+[config.wallpaper]
+command = "swaybg"
+arguments = ["-i"]
+set = true
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'
+
+[templates.foot]
+input_path = '~/.config/matugen/templates/custom/foot.ini'
+output_path = '~/.config/foot/colors.ini'
+
+[templates.niri]
+input_path = '~/.config/matugen/templates/niri-colors.kdl'
+output_path = '~/.config/niri/colors.kdl'
+post_hook = 'niri msg action load-config-file'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+
+[templates.mako]
+input_path = '~/.config/matugen/templates/mako'
+output_path = '~/.config/mako/mako-colors'
+post_hook = 'makoctl reload'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/custom/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.fuzzel]
+input_path = '~/.config/matugen/templates/custom/fuzzel.ini'
+output_path = '~/.config/fuzzel/colors.ini'
+
+###
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+
+#[templates.kitty]
+#input_path = '~/.config/matugen/templates/kitty-colors.conf'
+#output_path = '~/.config/kitty/themes/Matugen.conf'
+#post_hook = "kitty +kitten themes --reload-in=all Matugen"

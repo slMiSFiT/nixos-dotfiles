@@ -1,0 +1,24 @@
+{ config,... }:
+let
+  dots = "${config.home.homeDirectory}/nixos-dotfiles/home/dots";
+  lnDots = path: config.lib.file.mkOutOfStoreSymlink "${dots}/${path}";
+in {
+  home.file.".config/niri".source = lnDots "/.config/niri";
+  home.file.".config/matugen".source = lnDots "/.config/matugen";
+  home.file.".config/nvim".source = lnDots "/.config/nvim";
+  home.file.".config/foot".source = lnDots "/.config/foot";
+  home.file.".config/mako".source = lnDots "/.config/mako";
+  home.file.".config/yazi".source = lnDots "/.config/yazi";
+  home.file.".config/btop".source = lnDots "/.config/btop";
+  home.file.".config/rofi".source = lnDots "/.config/rofi";
+  home.file.".config/fuzzel".source = lnDots "/.config/fuzzel";
+  home.file.".config/git".source = lnDots "/.config/git";
+  home.file.".config/fastfetch".source = lnDots "/.config/fastfetch";
+  home.file.".config/rofimoji.rc".source = lnDots "/.config/rofimoji.rc";
+  home.file.".config/starship.toml".source = lnDots "/.config/starship.toml";
+  #home.file.".zshrc".source = lnDots ".zshrc";
+  home.file.".config/qutebrowser".source = lnDots "/.config/qutebrowser";
+  home.file.".config/lazygit".source = lnDots "/.config/lazygit";
+  ###
+  home.file.".config/hypr".source = lnDots "/.config/hypr";
+  }
