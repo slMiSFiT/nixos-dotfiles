@@ -6,6 +6,7 @@
     yazi
     fuzzel
     cliphist
+    wl-clipboard
     libnotify
     trash-cli
     adw-gtk3

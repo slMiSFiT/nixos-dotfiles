@@ -400,8 +400,8 @@ binds {
     Super+Alt+n hotkey-overlay-title="Run Application: nmtui" { spawn-sh "foot -T nmtui nmtui"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Super+B hotkey-overlay-title="Run Web Browser: qutebrowser" { spawn "qutebrowser"; }
-    Super+C hotkey-overlay-title="Run Clipboard manager" { spawn "bash" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
-    Mod+Alt+C { spawn "bash" "-c" "cliphist wipe"; }
+    Super+V hotkey-overlay-title="Run Clipboard manager" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    Mod+Alt+V { spawn-sh "cliphist wipe"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -620,8 +620,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+T       { toggle-window-floating; }
+    Mod+Shift+T { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
