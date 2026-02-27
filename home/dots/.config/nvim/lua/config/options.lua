@@ -1,6 +1,7 @@
 local global = vim.g
 local o = vim.opt
 
+o.termguicolors = true
 o.tabstop = 2 -- Number of visual spaces per TAB
 o.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent
 o.softtabstop = 2

@@ -8,7 +8,7 @@
     ./services
     ./programs
     ./packages
-    ./dots.nix
+    ./config.nix
   ];
  
   fonts.fontconfig.enable = true;

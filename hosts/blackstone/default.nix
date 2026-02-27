@@ -7,6 +7,8 @@
   imports =
     [ 
       ./hardware-configuration.nix
+      ../../modules/performance.nix
+      ../../modules/theming.nix
     ];
 
   # Bootloader.
@@ -58,7 +60,6 @@
     };
   };
 
-  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.misfit = {
     isNormalUser = true;
@@ -102,7 +103,8 @@
  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  
+    
   # Automatic updating
   system.autoUpgrade.enable = true;
   system.autoUpgrade.dates = "weekly";

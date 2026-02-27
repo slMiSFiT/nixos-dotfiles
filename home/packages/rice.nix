@@ -9,21 +9,20 @@
     wl-clipboard
     libnotify
     trash-cli
-    adw-gtk3
     nwg-look
-    adwaita-icon-theme
-    dejavu_fonts
-    nerd-fonts.jetbrains-mono
     btop
     fastfetch
 # Niri
     xwayland-satellite
     swaybg
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+    gnome-keyring
 # Hyprland
     #hyprpaper
     hyprlock
-    #hyprpolkitagent # hyprland
-    #hypridle
+    hyprpolkitagent
+    hypridle
     #hyprsunset
     #waybar
     #kitty
