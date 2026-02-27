@@ -27,7 +27,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               #extraSpecialArgs = { inherit inputs; };
-              users.misfit = ./home;
+              users.misfit = ./hosts/blackstone/home;
               backupFileExtension = "backup";
             };
           }
@@ -42,7 +42,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.misfit = ./home;
+              users.whoami = ./hosts/aspirin/whoami;
               backupFileExtension = "backup";
             };
           }
