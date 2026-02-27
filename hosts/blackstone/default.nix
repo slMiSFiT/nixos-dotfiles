@@ -7,8 +7,9 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ../../modules/performance.nix
-      ../../modules/theming.nix
+      ./modules/performance.nix
+      ./modules/theming.nix
+      ./modules/security.nix
     ];
 
   # Bootloader.
