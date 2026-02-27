@@ -42,9 +42,10 @@
       };
       core = {
         editor = "nvim";
-	autoClf = false;
+	      autocrlf = false;
       };
       push.autoSetupRemote = true;
+      pull.rebase = false;
     };
   };
 
