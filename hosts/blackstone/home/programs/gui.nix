@@ -14,4 +14,5 @@
     privateDefault  = "ddg";
     };
   };
+  stylix.targets.firefox.enable = false;
 }
