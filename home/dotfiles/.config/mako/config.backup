@@ -1,0 +1,12 @@
+include=~/.config/mako/mako-colors
+
+font=monospace 11
+border-size=2
+
+[mode=do-not-disturb]
+invisible=1
+on-notify=none
+
+[mode=silent]
+on-notify=none
+

@@ -16,21 +16,38 @@
 
   };
   outputs = inputs@{ self, nixpkgs,stylix, home-manager, ... }: {
-    nixosConfigurations.blackstone = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./hosts/blackstone
-        stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            #extraSpecialArgs = { inherit inputs; };
-            users.misfit = ./home;
-            backupFileExtension = "backup";
-          };
-        }
-      ];
+    nixosConfigurations = {
+     blackstone = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/blackstone
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              #extraSpecialArgs = { inherit inputs; };
+              users.misfit = ./home;
+              backupFileExtension = "backup";
+            };
+          }
+        ];
+      };
+      aspirin = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/aspirin
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.misfit = ./home;
+              backupFileExtension = "backup";
+            };
+          }
+        ];
+      };
     };
   };
 }

@@ -8,7 +8,7 @@
     ./services
     ./programs
     ./packages
-    ./config.nix
+    ./symlink.nix
   ];
  
   fonts.fontconfig.enable = true;

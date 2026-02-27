@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  dots = "${config.home.homeDirectory}/nixos-dotfiles/home/dots";
+  dots = "${config.home.homeDirectory}/nixos-dotfiles/home/dotfiles";
   lnDots = path: config.lib.file.mkOutOfStoreSymlink "${dots}/${path}";
 in {
   home.file."Pictures/Wallpapers".source = lnDots "/Wallpapers";
