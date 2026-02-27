@@ -15,7 +15,7 @@ in {
   home.file.".config/btop".source = lnAssets "dots/.config/btop";
   home.file.".config/fuzzel".source = lnAssets "dots/.config/fuzzel";
   home.file.".config/qutebrowser".source = lnAssets "dots/.config/qutebrowser";
-  home.file.".config/swaylidle".source = lnAssets "dots/.config/swayidle";
+  home.file.".config/swayidle".source = lnAssets "dots/.config/swayidle";
   home.file.".config/swaylock".source = lnAssets "dots/.config/swaylock";
 
 }

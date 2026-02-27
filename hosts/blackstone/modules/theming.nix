@@ -4,7 +4,7 @@
   stylix = {
     enable = true;
     #image = ./wallpaper.png;  # generates colorscheme from wallpaper
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     polarity = "dark";
     fonts = {
       sizes = {
