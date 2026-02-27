@@ -12,14 +12,13 @@
     nwg-look
     btop
     fastfetch
-   # Niri
-    xwayland-satellite
     swaybg
+    swayidle
+    swaylock
+    hyprpolkitagent
+    mako
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     gnome-keyring
-    hyprlock
-    hyprpolkitagent
-    hypridle
   ];
 }

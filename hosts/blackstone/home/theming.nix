@@ -7,8 +7,5 @@
       package = pkgs.papirus-icon-theme;
     };
   };
-
-  stylix.targets = {
-    firefox.profileNames = [ "misfit" ];
-  };
+  
 }

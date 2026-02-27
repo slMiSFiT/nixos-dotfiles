@@ -8,5 +8,10 @@
       AppAutoUpdate = false;
       BackgroundAppUpdate = false;
     };
+    profiles.default.search = {
+    force           = true;
+    default         = "DuckDuckGo";
+    privateDefault  = "DuckDuckGo";
+    };
   };
 }
