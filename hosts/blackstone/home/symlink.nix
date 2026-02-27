@@ -16,7 +16,5 @@ in {
   home.file.".config/fuzzel".source = lnAssets "dots/.config/fuzzel";
   home.file.".config/qutebrowser".source = lnAssets "dots/.config/qutebrowser";
 
-  # stylix work
-  #home.file.".config/mako".source = lnAssets "dots/.config/mako";
 }
 
