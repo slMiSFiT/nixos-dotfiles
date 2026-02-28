@@ -19,6 +19,5 @@
   home.packages =  with pkgs; [
     brave
     vesktop
-    kdePackages.kdeconnect-kde
   ];
 }

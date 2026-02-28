@@ -1,0 +1,20 @@
+// Gruvbox Material Dark Hard — niri colors
+layout {
+    border {
+        active-color "#89b482"
+        inactive-color "#504945"
+        urgent-color  "#ea6962"
+    }
+
+    focus-ring {
+        active-color  "#d8a657"
+        inactive-color "#3c3836"
+    }
+
+    shadow {
+        softness 30
+        spread   5
+        offset x=0 y=5
+        color "#1d202188"
+    }
+}

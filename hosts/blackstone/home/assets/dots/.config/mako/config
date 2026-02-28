@@ -1,0 +1,40 @@
+# Gruvbox Material Dark Hard — mako
+
+# Background
+background-color=#282828ee
+
+# Text
+text-color=#d4be98
+
+# Border
+border-color=#504945ff
+border-size=2
+border-radius=6
+
+# Progress bar
+progress-color=over #3c3836ff
+
+# Default timeout (ms)
+default-timeout=5000
+
+# Margin / padding
+margin=10
+padding=12
+
+# Font
+font=Monospace 11
+
+[urgency=low]
+background-color=#282828cc
+border-color=#3c3836ff
+text-color=#928374
+
+[urgency=normal]
+background-color=#282828ee
+border-color=#504945ff
+text-color=#d4be98
+
+[urgency=high]
+background-color=#282828ff
+border-color=#ea6962ff
+text-color=#ddc7a1

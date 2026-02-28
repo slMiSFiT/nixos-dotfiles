@@ -69,7 +69,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
-    #brightnessctl
+    brightnessctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

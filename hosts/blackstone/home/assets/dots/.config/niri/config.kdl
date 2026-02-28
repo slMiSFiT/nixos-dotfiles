@@ -271,7 +271,8 @@ layout {
     }
 }
 // overrite colors 
-include "./colors.kdl"
+//include "./colors.kdl"
+include "./gruvbox.kdl"
 
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
@@ -281,7 +282,7 @@ include "./colors.kdl"
 // This line starts waybar, a commonly used bar for Wayland compositors.
 //spawn-at-startup "waybar"
 spawn-at-startup "mako"
-spawn-sh-at-startup "swayidle -w"
+spawn-sh-at-startup "hypridle"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
