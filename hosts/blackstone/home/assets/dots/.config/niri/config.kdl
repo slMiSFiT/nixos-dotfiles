@@ -396,7 +396,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open Terminal: foot" { spawn-sh "foot"; }
+    Mod+Return hotkey-overlay-title="Open Terminal: foot" { spawn-sh "foot zsh -c 'fastfetch; exec zsh'"; }
     Mod+Space hotkey-overlay-title="Run Application manager: fuzzel" { spawn-sh "fuzzel"; }
     Super+N hotkey-overlay-title="Run Text Editor: Neovim" { spawn-sh "foot -T nvim nvim"; }
     Super+E hotkey-overlay-title="Run File Manager: Yazi" { spawn-sh "foot -T yazi yazi"; }
