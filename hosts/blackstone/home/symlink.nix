@@ -9,6 +9,7 @@ in {
     ".config/hypr".source = lnAssets "dots/.config/hypr";
     ".config/fastfetch".source = lnAssets "dots/.config/fastfetch";
     ".config/matugen".source = lnAssets "dots/.config/matugen";
+    ".config/mako".source = lnAssets "dots/.config/mako";
     ".newsboat".source = lnAssets "dots/.newsboat";
     ".config/lazygit".source = lnAssets "dots/.config/lazygit";
     ".config/nvim".source = lnAssets "dots/.config/nvim";

@@ -19,10 +19,10 @@ input_path = '~/.config/matugen/templates/niri-colors.kdl'
 output_path = '~/.config/niri/colors.kdl'
 post_hook = 'niri msg action load-config-file'
 
-#[templates.mako]
-#input_path = '~/.config/matugen/templates/mako'
-#output_path = '~/.config/mako/mako-colors'
-#post_hook = 'makoctl reload'
+[templates.mako]
+input_path = '~/.config/matugen/templates/mako'
+output_path = '~/.config/mako/mako-colors'
+post_hook = 'makoctl reload'
 
 [templates.yazi]
 input_path = '~/.config/matugen/templates/custom/yazi-theme.toml'

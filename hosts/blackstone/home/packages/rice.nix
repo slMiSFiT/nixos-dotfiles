@@ -12,8 +12,8 @@
     btop
     fastfetch
     swaybg
-    swayidle
-    swaylock
+    hypridle
+    hyprlock
     hyprpolkitagent
     mako
     xdg-desktop-portal-gtk
