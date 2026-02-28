@@ -1,7 +1,8 @@
 # Gruvbox Material Dark Hard — btop theme
 
 # Main background
-theme[main_bg]="#1d2021"
+#theme[main_bg]="#1d2021"
+theme[main_bg]=""
 
 # Main text color
 theme[main_fg]="#d4be98"

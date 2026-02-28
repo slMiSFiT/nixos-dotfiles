@@ -16,6 +16,7 @@
     hyprlock
     hyprpolkitagent
     mako
+    waypaper
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     gnome-keyring

@@ -122,6 +122,7 @@ layout {
     // Set gaps around windows in logical pixels.
     gaps 12
 
+    background-color "transparent"
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
@@ -286,7 +287,7 @@ spawn-sh-at-startup "hypridle"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/gruvbox/agent.png"
+spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/gruvbox/agent.png -m fill"
 spawn-sh-at-startup "systemctl --user start hyprpolkitagent"
 spawn-sh-at-startup "trash-empty 30"
 
@@ -379,6 +380,9 @@ window-rule {
     // block-out-from "screencast"
 }
 
+layer-rule {
+    place-within-backdrop true
+}
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -407,6 +411,7 @@ binds {
     Super+B hotkey-overlay-title="Run Web Browser: Brave" { spawn "brave"; }
     Super+V hotkey-overlay-title="Run Clipboard manager" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     Mod+Alt+V { spawn-sh "cliphist wipe"; }
+    Super+W { spawn "waypaper"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
