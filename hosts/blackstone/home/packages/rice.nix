@@ -9,7 +9,6 @@
     wl-clipboard
     libnotify
     trash-cli
-    nwg-look
     btop
     fastfetch
     swaybg
@@ -21,4 +20,5 @@
     xdg-desktop-portal-gnome
     gnome-keyring
   ];
+
 }

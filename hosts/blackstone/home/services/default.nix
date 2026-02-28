@@ -2,6 +2,6 @@
 {
   imports = [
     ./cliphist.nix
-    #./syncthing.nix
+    ./syncthing.nix
   ];
 }

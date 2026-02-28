@@ -6,7 +6,6 @@
   home.stateVersion = "25.11";
   imports = [
     ./services
-    ./programs
     ./packages
     ./theming.nix
     ./symlink.nix

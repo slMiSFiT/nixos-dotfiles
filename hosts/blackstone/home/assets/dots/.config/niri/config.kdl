@@ -403,7 +403,7 @@ binds {
     Super+Alt+n hotkey-overlay-title="Run Application: nmtui" { spawn-sh "foot -T nmtui nmtui"; }
 // Mod+Alt+L allow-inhibiting=false {spawn "swaylock";}
  Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn-sh "loginctl lock-session"; }
-    Super+B hotkey-overlay-title="Run Web Browser: qutebrowser" { spawn "qutebrowser"; }
+    Super+B hotkey-overlay-title="Run Web Browser: Brave" { spawn "brave"; }
     Super+V hotkey-overlay-title="Run Clipboard manager" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     Mod+Alt+V { spawn-sh "cliphist wipe"; }
 
