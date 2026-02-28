@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;  # latest kernel
@@ -11,7 +11,7 @@
   };
 
   services.fstrim.enable = true;
-
+  services.pipewire.enable = true;
   boot.kernel.sysctl = {
     "vm.swappiness" = 30;
     "vm.vfs_cache_pressure" = 70;
