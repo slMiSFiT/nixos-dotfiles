@@ -17,9 +17,9 @@
     hyprpolkitagent
     mako
     waypaper
+    rofimoji
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
-    gnome-keyring
   ];
 
 }

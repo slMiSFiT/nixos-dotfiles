@@ -9,6 +9,7 @@ return {
 				-- names, RGB, RGBA, RRGGBB, RRGGBBAA, AARRGGBB, rgb_fn, hsl_fn, oklch_fn
 				css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn, oklch_fn
 				xterm = true, -- Enable xterm 256-color codes (#xNN, \e[38;5;NNNm)
+        suppress_deprecation = true;
 			},
 		})
 		-- rgb(ffffff)
