@@ -7,9 +7,9 @@
   imports =
     [ 
       ./hardware-configuration.nix
+      ./modules/security.nix
       ./modules/performance.nix
       ./modules/theming.nix
-      ./modules/security.nix
     ];
 
   # Bootloader.
@@ -70,9 +70,9 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHOzpoM+DOJIGoFqW3Y77G5rw8TVyHTHfBw/P5EAvBbX lao.soufiane@proton.me"
     ];
-    #packages = with pkgs; [
-    #  
-    #];
+    packages = with pkgs; [
+      git 
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -80,21 +80,12 @@
   programs.zsh.enable = true;
 
   programs.niri.enable = true;
-  #programs.hyprland = {
-  #  enable = true;
-  #  withUWSM = false;
-  #  xwayland.enable = true;
-  #};
 
   programs.neovim = {
     enable = true;
     defaultEditor = true;
   };
-
-  programs.steam = {
-    enable = true;
-    #extraCompatPackages = [ pkgs.proton-ge-bin ]; 
-  };
+  programs.nano.enable = false;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -105,7 +96,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
-    
   # Automatic updating
   system.autoUpgrade.enable = true;
   system.autoUpgrade.dates = "weekly";
@@ -118,40 +108,6 @@
   };
 
   nix.settings.auto-optimise-store = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  services.openssh = {
-    enable = true;
-    ports = [ 5924 ];
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-      PermitRootLogin = "no";
-      MaxAuthTries = 3;
-      ClientAliveInterval = 300;
-      ClientAliveCountMax = 2;
-      AllowUsers = [ "misfit" ];
-    };
-  };
-  services.fail2ban.enable = true;
-  services.endlessh = {
-    enable = true;
-    port = 22;
-    openFirewall = true;
-  };
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 5924 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

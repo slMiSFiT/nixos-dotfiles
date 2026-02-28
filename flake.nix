@@ -33,21 +33,6 @@
           }
         ];
       };
-      aspirin = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/aspirin
-          stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.whoami = ./hosts/aspirin/whoami;
-              backupFileExtension = "backup";
-            };
-          }
-        ];
-      };
     };
   };
 }

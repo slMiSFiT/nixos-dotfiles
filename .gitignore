@@ -3,3 +3,4 @@ result
 result-*
 .direnv
 cache.db
+cache.db.lock

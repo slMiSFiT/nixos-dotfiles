@@ -4,16 +4,10 @@
   stylix = {
     enable = true;
     #image = ./wallpaper.png;  # generates colorscheme from wallpaper
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     polarity = "dark";
     fonts = {
-      sizes = {
-        applications = 12;
-        terminal = 25;
-        desktop = 12;
-        popups = 12;
-      };
-     monospace = {
+      monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
       };
