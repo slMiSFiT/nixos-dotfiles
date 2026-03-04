@@ -2,9 +2,7 @@
 
 {
   programs.niri.enable = true;
-  users.users.misfitgoy.packages = with pkgs; [
-    xwayland-satellite
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
-  ];
+  security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.swaylock = {};
 }

@@ -411,7 +411,6 @@ binds {
     Mod+Slash hotkey-overlay-title="Run Application: Btop++" { spawn-sh "foot -T btop btop"; }
     Mod+Alt+N hotkey-overlay-title="Run Application: nmtui" { spawn-sh "foot -T nmtui nmtui"; }
     Mod+Alt+L allow-inhibiting=false {spawn "swaylock";}
-    //Mod+Alt+L allow-inhibiting=false hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "loginctl lock-session"; }
     Mod+B hotkey-overlay-title="Run Web Browser: Brave" { spawn "brave"; }
     Mod+Alt+B hotkey-overlay-title="Run Bookmarks menu" { spawn-sh "bookmarks"; }
     Mod+V hotkey-overlay-title="Run Clipboard Manager" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }

@@ -13,6 +13,7 @@ in {
     ".config/yazi".source = lnAssets "dots/.config/yazi";
     ".config/waybar".source = lnAssets "dots/.config/waybar";
     ".config/nvim".source = lnAssets "dots/.config/nvim";
+    ".config/swaylock".source = lnAssets "dots/.config/swaylock";
     #".config/mako".source = lnAssets "dots/.config/swaync";
     #".config/matugen".source = lnAssets "dots/.config/matugen";
     #".config/hypr".source = lnAssets "dots/.config/hypr";

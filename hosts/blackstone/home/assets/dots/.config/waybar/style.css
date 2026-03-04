@@ -48,8 +48,6 @@ window#waybar.hidden {
 #tray,
 #window,
 #idle_inhibitor,
-#custom-notification,
-#custom-syncthing,
 #workspaces {
     background-color: rgba(40, 40, 40, 0.9);
     color: #d4be98;
@@ -67,9 +65,7 @@ window#waybar.hidden {
 #memory:hover,
 #battery:hover,
 #network:hover,
-#idle_inhibitor:hover,
-#custom-notification:hover,
-#custom-syncthing:hover {
+#idle_inhibitor:hover {
     background-color: rgba(50, 48, 47, 0.80);
 }
 
@@ -225,61 +221,6 @@ window#waybar.hidden {
     color: #e78a4e;
     border-bottom-color: rgba(231, 138, 78, 0.65);
     background-color: rgba(231, 138, 78, 0.15);
-}
-
-/* ── SwayNC notification center ─────────────────────────── */
-#custom-notification {
-    color: #a9b665;
-    border-bottom-color: rgba(169, 182, 101, 0.55);
-}
-
-#custom-notification.notification,
-#custom-notification.inhibited-notification {
-    color: #d8a657;
-    border-bottom-color: rgba(216, 166, 87, 0.65);
-    background-color: rgba(216, 166, 87, 0.12);
-}
-
-#custom-notification.dnd-none,
-#custom-notification.dnd-inhibited-none {
-    color: #7c6f64;
-    border-bottom-color: rgba(124, 111, 100, 0.35);
-}
-
-#custom-notification.dnd-notification,
-#custom-notification.dnd-inhibited-notification {
-    color: #ea6962;
-    border-bottom-color: rgba(234, 105, 98, 0.65);
-    background-color: rgba(234, 105, 98, 0.12);
-}
-
-#custom-notification.inhibited-none {
-    color: #7daea3;
-    border-bottom-color: rgba(125, 174, 163, 0.45);
-}
-
-/* ── Syncthing ───────────────────────────────────────────── */
-#custom-syncthing {
-    color: #7daea3;
-    border-bottom-color: rgba(125, 174, 163, 0.55);
-}
-
-#custom-syncthing.syncing {
-    color: #d8a657;
-    border-bottom-color: rgba(216, 166, 87, 0.65);
-    background-color: rgba(216, 166, 87, 0.10);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-#custom-syncthing.error {
-    color: #ea6962;
-    border-bottom-color: rgba(234, 105, 98, 0.75);
-    background-color: rgba(234, 105, 98, 0.12);
-}
-
-#custom-syncthing.offline {
-    color: #7c6f64;
-    border-bottom-color: rgba(124, 111, 100, 0.35);
 }
 
 /* ── Tooltip ─────────────────────────────────────────────── */
