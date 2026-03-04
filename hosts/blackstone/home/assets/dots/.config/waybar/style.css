@@ -176,14 +176,6 @@ window#waybar.hidden {
     border-bottom-color: rgba(169, 182, 101, 0.55);
 }
 
-#battery.good {
-    color: #a9b665;
-}
-
-#battery.bat2 {
-    border-bottom-color: rgba(169, 182, 101, 0.35);
-}
-
 #battery.warning:not(.charging) {
     color: #d8a657;
     border-bottom-color: rgba(216, 166, 87, 0.55);
@@ -249,4 +241,3 @@ tooltip label {
     50%  { opacity: 0.5; }
     100% { opacity: 1; }
 }
-

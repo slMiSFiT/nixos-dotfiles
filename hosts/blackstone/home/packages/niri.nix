@@ -13,7 +13,7 @@
     rofimoji
     swaybg
     swayidle
-    swaylock
+    swaylock-effects
     waybar
     waypaper
     wl-clipboard
@@ -27,7 +27,6 @@
     enable = true;
     extraPortals = [ 
       pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-gtk
     ];
     config.common.default = "*";
   };

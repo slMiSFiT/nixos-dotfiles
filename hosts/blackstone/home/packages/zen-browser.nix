@@ -7,6 +7,7 @@
     # or inputs.zen-browser.homeModules.twilight-official
   ];
   programs.zen-browser.enable = true;
+  programs.zen-browser.suppressXdgMigrationWarning = true;
   stylix.targets.zen-browser.enable = false;
 }
 
