@@ -32,6 +32,7 @@
       # keep it in order
       fastfetch
       git
+      lazygit
       tealdeer
       trash-cli
       tree

@@ -282,13 +282,17 @@ include "./gruvbox.kdl"
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "mako"
-spawn-at-startup "waybar"
-
+spawn-at-startup "swayidle" "-w" \
+    "timeout" "3" "swaylock" \
+    "timeout" "6" "niri msg action power-off-monitors" \
+    "resume" "niri msg action power-on-monitors" \
+    "before-sleep" "swaylock" \
+    "lock" "swaylock" \
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-spawn-sh-at-startup "swayidle -w timeout 5 niri msg action power-off-monitors"
-spawn-sh-at-startup "xwayland-satellite"
+spawn-sh-at-startup "sleep 2 && waybar"
+//spawn-sh-at-startup "xwayland-satellite"
 spawn-sh-at-startup "waypaper --backend swaybg --restore"
 //spawn-sh-at-startup "systemctl --user start hyprpolkitagent"
 spawn-sh-at-startup "trash-empty 30"

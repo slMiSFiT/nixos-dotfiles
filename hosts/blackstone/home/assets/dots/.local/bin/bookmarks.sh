@@ -7,8 +7,6 @@ declare -A bookmarks=(
   ["  HM Manual"]="https://nix-community.github.io/home-manager/"
   ["  Hyprland Wiki"]="https://wiki.hyprland.org"
   ["  Niri Wiki"]="https://niri-wm.github.io/"
-  ["  Reddit"]="https://reddit.com"
-  ["  YouTube"]="https://youtube.com"
 )
 
 choice=$(printf '%s\n' "${!bookmarks[@]}" | sort | fuzzel --dmenu --prompt "   bookmarks  ")

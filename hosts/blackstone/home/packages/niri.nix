@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    # keep it in order
     btop
     brave
     cliphist
@@ -18,13 +19,16 @@
     wl-clipboard
     yazi
     xwayland-satellite
-
   ];
- xdg.portal = {
+
+  services.polkit-gnome.enable = true;
+
+  xdg.portal = {
     enable = true;
     extraPortals = [ 
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
     ];
+    config.common.default = "*";
   };
 }

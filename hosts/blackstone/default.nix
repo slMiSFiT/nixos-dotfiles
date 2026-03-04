@@ -8,6 +8,7 @@
     [ 
       ./hardware-configuration.nix
       ./modules/performance.nix
+      ./modules/hardware.nix
       ./modules/network.nix
       ./modules/stylix.nix
       ./modules/niri.nix
