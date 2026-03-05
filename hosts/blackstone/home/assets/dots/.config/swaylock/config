@@ -1,48 +1,43 @@
-# Gruvbox Material Dark Hard — swaylock-effects config
+# Gruvbox Material Dark Hard — swaylock config
 
 ignore-empty-password
 show-failed-attempts
 
-# ── Blurred screenshot background ─────────────────────────
-screenshots
-effect-blur=9x5
-effect-vignette=0.4:0.6
+# ── Background ────────────────────────────────────────────
+color=1d2021
 
-# ── Fade in transition ─────────────────────────────────────
-fade-in=0.2
-
-# ── Ring ───────────────────────────────────────────────────
+# ── Ring ──────────────────────────────────────────────────
 ring-color=504945
 ring-ver-color=7daea3
 ring-wrong-color=ea6962
 ring-clear-color=d8a657
 
-# ── Inside (fill of the ring circle) ──────────────────────
-inside-color=1d2021cc
-inside-ver-color=3c3836cc
-inside-wrong-color=1d2021cc
-inside-clear-color=1d2021cc
+# ── Inside ────────────────────────────────────────────────
+inside-color=282828
+inside-ver-color=3c3836
+inside-wrong-color=282828
+inside-clear-color=282828
 
-# ── Key highlight ──────────────────────────────────────────
+# ── Key highlight ─────────────────────────────────────────
 key-hl-color=a9b665
 bs-hl-color=ea6962
 
-# ── Separator ──────────────────────────────────────────────
-separator-color=00000000
+# ── Separator ─────────────────────────────────────────────
+separator-color=1d2021
 
-# ── Text ───────────────────────────────────────────────────
+# ── Text ──────────────────────────────────────────────────
 text-color=d4be98
 text-ver-color=7daea3
 text-wrong-color=ea6962
 text-clear-color=d8a657
 
-# ── Line (hidden — blends into indicator) ─────────────────
-line-color=00000000
-line-ver-color=00000000
-line-wrong-color=00000000
-line-clear-color=00000000
+# ── Line ──────────────────────────────────────────────────
+line-color=1d2021
+line-ver-color=1d2021
+line-wrong-color=1d2021
+line-clear-color=1d2021
 
-# ── Geometry ───────────────────────────────────────────────
+# ── Geometry ──────────────────────────────────────────────
 ring-width=4
 indicator-radius=90
 indicator-thickness=10

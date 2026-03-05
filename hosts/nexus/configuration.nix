@@ -1,27 +1,27 @@
-# Help is available in the configuration.nix(5) man page
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ./modules/performance.nix
-    ./modules/hardware.nix
+    # Include the results of the hardware scan. ./hardware-configuration.nix
+    ./modules/laptop.nix
     ./modules/network.nix
-    ./modules/stylix.nix
-    ./modules/niri.nix
+    ./modules/maintenance.nix
     ./modules/user.nix
+    ./modules/pkgs.nix
   ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "blackstone";
-
+  # Set your time zone.
   time.timeZone = "Africa/Casablanca";
 
+  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -42,14 +42,6 @@
     variant = "";
   };
 
-  nixpkgs.config.allowUnfree = true;
-
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    brightnessctl
-  ];
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -62,6 +54,17 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

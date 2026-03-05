@@ -10,4 +10,3 @@
   programs.zen-browser.suppressXdgMigrationWarning = true;
   stylix.targets.zen-browser.enable = false;
 }
-

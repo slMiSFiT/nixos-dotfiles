@@ -7,4 +7,3 @@
     ./zen-browser.nix
   ];
 }
-

@@ -1,6 +1,6 @@
 { ... }:
 {
- programs.starship.enable = true;
+  programs.starship.enable = true;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -20,7 +20,11 @@
     history.size = 10000;
     history.ignoreAllDups = true;
     history.path = "$HOME/.zsh_history";
-    history.ignorePatterns = ["rm *" "pkill *" "cp *"];
+    history.ignorePatterns = [
+      "rm *"
+      "pkill *"
+      "cp *"
+    ];
   };
   programs.fzf = {
     enable = true;
@@ -35,12 +39,12 @@
     enable = true;
     settings = {
       user = {
-        name  = "misfit";
+        name = "misfit";
         email = "lao.soufiane@proton.me";
       };
       core = {
         editor = "nvim";
-	      autocrlf = false;
+        autocrlf = false;
       };
       push.autoSetupRemote = true;
       pull.rebase = false;

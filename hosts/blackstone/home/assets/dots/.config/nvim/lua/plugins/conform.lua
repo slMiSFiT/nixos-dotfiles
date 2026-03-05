@@ -10,6 +10,7 @@ return {
 				html = { "prettier" },
 				json = { "prettier" },
 				yaml = { "prettier" },
+				nix = { "nixfmt" },
 				-- Conform will run multiple formatters sequentially
 				--python = { "isort", "black" },
 				-- You can customize some of the format options for the filetype (:help conform.format)

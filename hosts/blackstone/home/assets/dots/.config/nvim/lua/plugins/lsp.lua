@@ -1,5 +1,3 @@
--- Your config is mostly correct! Here's the improved version:
-
 return {
 	"mason-org/mason-lspconfig.nvim",
 	dependencies = {

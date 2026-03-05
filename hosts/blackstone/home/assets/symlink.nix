@@ -2,7 +2,8 @@
 let
   assets = "${config.home.homeDirectory}/nixos-dotfiles/hosts/blackstone/home/assets";
   lnAssets = path: config.lib.file.mkOutOfStoreSymlink "${assets}/${path}";
-in {
+in
+{
   home.file = {
     "Pictures/Wallpapers".source = lnAssets "/wallpapers";
     ".config/niri".source = lnAssets "dots/.config/niri";

@@ -11,7 +11,7 @@
     ./shell.nix
     ./assets/symlink.nix
   ];
- 
+
   fonts.fontconfig.enable = true;
 
   # Let home manager install and manage itself.

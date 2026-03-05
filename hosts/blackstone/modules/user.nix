@@ -10,20 +10,22 @@
     };
   };
 
-   programs.neovim = {
+  programs.neovim = {
     enable = true;
-    defaultEditor = true; 
+    defaultEditor = true;
   };
 
   users.users.misfitgoy = {
     isNormalUser = true;
     description = "misfitgoy";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF+XCALVa51QMxkanMQcG/Y2sqhHYP6d/Hxy50DTXZWB lao.soufiane@proton.me"
     ];
-
     packages = with pkgs; [
       (pkgs.writeShellApplication {
         name = "ns";
@@ -33,9 +35,21 @@
         ];
         text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
       })
+      # Lsp
+      nixd
+      nil
+      # Formatters
+      stylua
+      prettier
+      nixfmt
+      # tools
+      fd
+      ripgrep
       # keep it in order
+      eza
       fastfetch
       git
+      keepassxc
       lazygit
       tealdeer
       trash-cli
