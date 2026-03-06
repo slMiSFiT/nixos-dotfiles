@@ -46,6 +46,10 @@
       "networkmanager"
       "wheel"
     ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF+XCALVa51QMxkanMQcG/Y2sqhHYP6d/Hxy50DTXZWB lao.soufiane@proton.me"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILIgSnbOSdbzWfB4cFOZYvsSKSBTSOv7U8x7SUbPEnCF termux"
+    ];
     packages = with pkgs; [ git ];
   };
 
@@ -122,8 +126,38 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
+  services.openssh = {
+    enable = true;
+    ports = [ 9365 ];
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+      MaxAuthTries = 3;
+      ClientAliveInterval = 300;
+      ClientAliveCountMax = 2;
+      X11Forwarding = false;
+      AllowUsers = [ "sysop" ];
+    };
+    openFirewall = true;
+  };
+  services.fail2ban.enable = true;
+  services.endlessh = {
+    enable = true;
+    port = 22;
+    openFirewall = true;
+  };
+  networking.interfaces.eth0.ipv4.addresses = [
+    {
+      address = "192.168.1.50";
+      prefixLength = 24;
+    }
+  ];
+  networking.defaultGateway = "192.168.1.1";
+  networking.nameservers = [
+    "1.1.1.1"
+    "8.8.8.8"
+  ];
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -135,12 +169,5 @@
     "flakes"
   ];
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
-
+  system.stateVersion = "25.11";
 }
