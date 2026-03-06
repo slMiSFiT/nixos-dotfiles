@@ -110,10 +110,6 @@
       STOP_CHARGE_THRESH_BAT0 = 80;
     };
   };
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=no
-    AllowHibernation=no
-  '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
