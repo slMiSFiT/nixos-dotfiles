@@ -23,24 +23,37 @@
     };
 
   };
-  outputs = inputs@{ self, nixpkgs ,stylix, home-manager, ... }: {
-    nixosConfigurations = {
-      blackstone = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/blackstone
-          stylix.nixosModules.stylix
-	  home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = { inherit inputs; };
-              users.misfitgoy= import ./hosts/blackstone/home;
-              backupFileExtension = "backup";
-            };
-          }
-        ];
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      stylix,
+      home-manager,
+      ...
+    }:
+    {
+      nixosConfigurations = {
+        blackstone = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./hosts/blackstone
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
+                users.misfitgoy = import ./hosts/blackstone/home;
+                backupFileExtension = "backup";
+              };
+            }
+          ];
+        };
+        nexus = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./hosts/nexus
+          ];
+        };
       };
     };
-  };
 }

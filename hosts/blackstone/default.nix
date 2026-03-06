@@ -6,6 +6,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./modules/laptop.nix
     ./modules/performance.nix
     ./modules/hardware.nix
     ./modules/network.nix
