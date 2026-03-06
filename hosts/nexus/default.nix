@@ -42,12 +42,12 @@
   users.users.sysop = {
     isNormalUser = true;
     description = "sysop";
+    shell = pkgs.bash;
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF+XCALVa51QMxkanMQcG/Y2sqhHYP6d/Hxy50DTXZWB lao.soufiane@proton.me"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILIgSnbOSdbzWfB4cFOZYvsSKSBTSOv7U8x7SUbPEnCF termux"
     ];
     packages = with pkgs; [ git ];
