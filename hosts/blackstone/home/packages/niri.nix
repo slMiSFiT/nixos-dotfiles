@@ -21,6 +21,7 @@
     xwayland-satellite
   ];
 
+  #services.walker.enable = true;
   services.polkit-gnome.enable = true;
 
   xdg.portal = {
