@@ -1,0 +1,257 @@
+/* ============================================================
+   Waybar — Gruvbox Material Dark Hard  ·  Transparent Edition
+   ============================================================
+   Palette:
+     bg-hard  #1d2021   bg1  #32302f   fg   #d4be98
+     bg0      #282828   bg2  #45403d   red  #ea6962
+     surface  #282828   bg3  #5a524c   grn  #a9b665
+                        bg4  #7c6f64   yel  #d8a657
+                                       blu  #7daea3
+                                       pur  #d3869b
+                                       aqu  #89b482
+                                       org  #e78a4e
+   ============================================================ */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
+  font-size: 13px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Bar (fully transparent) ─────────────────────────────── */
+window#waybar {
+  background-color: transparent;
+  color: #d4be98;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* ── Module groups ───────────────────────────────────────── */
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: transparent;
+}
+
+/* ── Shared pill style ───────────────────────────────────── */
+#clock,
+#cpu,
+#memory,
+#battery,
+#network,
+#tray,
+#window,
+#idle_inhibitor,
+#workspaces {
+  background-color: rgba(40, 40, 40, 0.9);
+  color: #d4be98;
+  border-radius: 8px;
+  padding: 3px 12px;
+  margin: 4px 0;
+  border-bottom: 2px solid rgba(124, 111, 100, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+/* ── Shared hover ────────────────────────────────────────── */
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#network:hover,
+#idle_inhibitor:hover {
+  background-color: rgba(50, 48, 47, 0.8);
+}
+
+/* ── Workspaces ──────────────────────────────────────────── */
+#workspaces {
+  padding: 3px 6px;
+}
+
+#workspaces button {
+  color: #7c6f64;
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 2px 8px;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+
+#workspaces button:hover {
+  color: #d4be98;
+  background-color: rgba(90, 82, 76, 0.45);
+  box-shadow: none;
+}
+
+#workspaces button.active {
+  color: #1d2021;
+  background-color: #a9b665;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+#workspaces button.urgent {
+  color: #1d2021;
+  background-color: #ea6962;
+}
+
+/* ── Window title ────────────────────────────────────────── */
+#window {
+  color: #d4be98;
+  font-style: italic;
+  border-bottom-color: rgba(212, 190, 152, 0.25);
+}
+
+/* ── Tray ────────────────────────────────────────────────── */
+#tray {
+  padding: 3px 8px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: rgba(234, 105, 98, 0.6);
+  border-radius: 6px;
+}
+
+/* ── Clock ───────────────────────────────────────────────── */
+#clock {
+  color: #d8a657;
+  font-weight: bold;
+  border-bottom-color: rgba(216, 166, 87, 0.55);
+}
+
+/* ── CPU ─────────────────────────────────────────────────── */
+#cpu {
+  color: #89b482;
+  border-bottom-color: rgba(137, 180, 130, 0.55);
+}
+
+#cpu.warning {
+  color: #d8a657;
+  border-bottom-color: rgba(216, 166, 87, 0.55);
+}
+
+#cpu.critical {
+  color: #ea6962;
+  border-bottom-color: rgba(234, 105, 98, 0.75);
+  animation: blink 1s linear infinite;
+}
+
+/* ── Memory ──────────────────────────────────────────────── */
+#memory {
+  color: #7daea3;
+  border-bottom-color: rgba(125, 174, 163, 0.55);
+}
+
+#memory.warning {
+  color: #d8a657;
+  border-bottom-color: rgba(216, 166, 87, 0.55);
+}
+
+#memory.critical {
+  color: #ea6962;
+  border-bottom-color: rgba(234, 105, 98, 0.75);
+  animation: blink 1s linear infinite;
+}
+
+/* ── Battery ─────────────────────────────────────────────── */
+#battery {
+  color: #a9b665;
+  border-bottom-color: rgba(169, 182, 101, 0.55);
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #a9b665;
+  border-bottom-color: rgba(169, 182, 101, 0.55);
+}
+
+#battery.warning:not(.charging) {
+  color: #d8a657;
+  border-bottom-color: rgba(216, 166, 87, 0.55);
+}
+
+#battery.critical:not(.charging) {
+  color: #ea6962;
+  border-bottom-color: rgba(234, 105, 98, 0.75);
+  animation: blink 1s linear infinite;
+}
+
+/* ── Network ─────────────────────────────────────────────── */
+#network {
+  color: #d3869b;
+  border-bottom-color: rgba(211, 134, 155, 0.55);
+}
+
+#network.disconnected {
+  color: #ea6962;
+  border-bottom-color: rgba(234, 105, 98, 0.75);
+}
+
+#network.linked {
+  color: #d8a657;
+  border-bottom-color: rgba(216, 166, 87, 0.55);
+}
+
+/* ── Idle Inhibitor ──────────────────────────────────────── */
+#idle_inhibitor {
+  color: #7c6f64;
+  border-bottom-color: rgba(124, 111, 100, 0.35);
+}
+
+#idle_inhibitor.activated {
+  color: #e78a4e;
+  border-bottom-color: rgba(231, 138, 78, 0.65);
+}
+
+/* ── Tooltip ─────────────────────────────────────────────── */
+tooltip {
+  background-color: rgba(29, 32, 33, 0.92);
+  border: 1px solid rgba(69, 64, 61, 0.75);
+  border-radius: 8px;
+  color: #d4be98;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+tooltip label {
+  color: #d4be98;
+  padding: 4px 8px;
+}
+
+/* ── Animations ──────────────────────────────────────────── */
+@keyframes blink {
+  0% {
+    background-color: rgba(40, 40, 40, 0.65);
+    color: #ea6962;
+  }
+  50% {
+    background-color: rgba(234, 105, 98, 0.75);
+    color: #1d2021;
+  }
+  100% {
+    background-color: rgba(40, 40, 40, 0.65);
+    color: #ea6962;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

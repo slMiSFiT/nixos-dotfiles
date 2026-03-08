@@ -1,0 +1,24 @@
+{ pkgs, ... }:
+{
+  services.displayManager.ly = {
+    enable = true;
+    x11Support = true;
+    settings = {
+      vi_mode = true;
+      animation = "matrix";
+      clock = "%d - %H:%M";
+    };
+  };
+
+  programs.niri.enable = true;
+  programs.hyprland.enable = true;
+
+  security.polkit.enable = true;
+  security.pam.services.swaylock = { };
+
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
+
+  services.udisks2.enable = true;
+}
