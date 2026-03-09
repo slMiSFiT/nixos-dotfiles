@@ -27,7 +27,7 @@
     hypridle
     hyprpolkitagent
     hyprlock
-    swww
+    hyprpaper
     mpv
     # Virtuaizaiton
     #virt-viewer

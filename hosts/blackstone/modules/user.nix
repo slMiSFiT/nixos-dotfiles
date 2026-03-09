@@ -6,7 +6,7 @@
     x11Support = true;
     settings = {
       vi_mode = true;
-      animation = "matrix";
+      #animation = "matrix";
       clock = "%d - %H:%M";
     };
   };
