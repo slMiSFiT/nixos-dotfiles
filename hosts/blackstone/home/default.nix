@@ -1,8 +1,8 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 {
   home.username = "misfit";
-  home.homeDirectory = lib.mkForce "/home/misfit";
+  home.homeDirectory = "/home/misfit";
   home.stateVersion = "25.11";
 
   imports = [
@@ -12,7 +12,6 @@
     ./neovim.nix
     ./cli
     ./shell.nix
-    ./git.nix
     ./scripts.nix
     ./assets/symlink.nix
   ];

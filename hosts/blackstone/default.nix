@@ -3,11 +3,12 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/performance.nix
-    ./modules/laptop.nix
-    ./modules/stylix.nix
     ./modules/desktop.nix
-    ./modules/firewall.nix
+    ./modules/laptop.nix
+    ./modules/network.nix
+    ./modules/performance.nix
+    ./modules/security.nix
+    ./modules/stylix.nix
     ./modules/user.nix
   ];
 
@@ -15,18 +16,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "blackstone";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  networking.networkmanager.enable = true;
-
   time.timeZone = "Africa/Casablanca";
 
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_GB.UTF-8";
     LC_IDENTIFICATION = "en_GB.UTF-8";
@@ -47,31 +39,20 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [ ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

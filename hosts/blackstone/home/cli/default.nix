@@ -3,6 +3,7 @@
   imports = [
     ./eza.nix
     ./bat.nix
+    ./git.nix
   ];
 
   programs.fzf = {

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-declare -A bookmarks=(
+declare -A resources=(
   [" Nerd Fonts"]="https://www.nerdfonts.com/"
   ["󰊤 Github Repos"]="https://github.com/search?q=&type=repositories"
   [" NixOS Wiki"]="https://wiki.nixos.org"
@@ -13,6 +13,6 @@ declare -A bookmarks=(
   ["󰑑 Regex101"]="https://regex101.com/"
 )
 
-choice=$(printf '%s\n' "${!bookmarks[@]}" | sort | fuzzel --dmenu --prompt "   bookmarks  ")
+choice=$(printf '%s\n' "${!resources[@]}" | sort | fuzzel --dmenu --prompt "resources >>")
 
-[[ -n "$choice" ]] && xdg-open "${bookmarks[$choice]}"
+[[ -n "$choice" ]] && xdg-open "${resources[$choice]}"
