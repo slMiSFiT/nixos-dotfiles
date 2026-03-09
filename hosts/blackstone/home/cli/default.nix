@@ -2,14 +2,12 @@
 {
   imports = [
     ./eza.nix
+    ./fzf.nix
     ./bat.nix
     ./git.nix
+    ./shell.nix
   ];
 
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;

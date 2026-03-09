@@ -13,6 +13,6 @@ declare -A resources=(
   ["󰑑 Regex101"]="https://regex101.com/"
 )
 
-choice=$(printf '%s\n' "${!resources[@]}" | sort | fuzzel --dmenu --prompt "resources >>")
+choice=$(printf '%s\n' "${!resources[@]}" | sort | fuzzel --dmenu --prompt "Resources > ")
 
 [[ -n "$choice" ]] && xdg-open "${resources[$choice]}"

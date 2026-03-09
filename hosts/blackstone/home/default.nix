@@ -11,9 +11,8 @@
     ./desktop.nix
     ./neovim.nix
     ./cli
-    ./shell.nix
-    ./scripts.nix
     ./assets/symlink.nix
+    ./assets/scripts.nix
   ];
 
   fonts.fontconfig.enable = true;
