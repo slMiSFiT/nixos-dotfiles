@@ -1,15 +1,10 @@
 { pkgs, ... }:
 {
-  services.displayManager.ly = {
-    enable = true;
-    x11Support = true;
-    settings = {
-      vi_mode = true;
-      animation = "matrix";
-      clock = "%d - %H:%M";
-    };
-  };
-
+  # niri
+  #programs.niri.enable = true;
+  #security.polkit.enable = true;
+  #security.pam.services.swaylock = { };
+  #hyprland
   programs.hyprland = {
     enable = true;
     withUWSM = false;
