@@ -1,9 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # one of "ignore", "poweroff", "reboot", "halt", "kexec", "suspend", "hibernate", "hybrid-sleep", "suspend-then-hibernate", "lock"
   services.logind.settings.Login = {
-    HandleLidSwitch = "hibernate";
-    HandleLidSwitchExternalPower = "hibernate";
+    HandleLidSwitch = "sleep-then-hibernate";
+    HandleLidSwitchExternalPower = "sleep";
     HandleLidSwitchDocked = "ignore";
   };
   services.tlp = {
@@ -24,4 +24,9 @@
       STOP_CHARGE_THRESH_BAT0 = 80;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
+
 }

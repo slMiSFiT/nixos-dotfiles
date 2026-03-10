@@ -17,6 +17,7 @@
     slurp
     keepassxc
     libnotify
+    localsend
     mako
     rofimoji
     trash-cli
@@ -28,7 +29,6 @@
     pyprland
     hypridle
     hyprpolkitagent
-    hyprlock
     hyprpaper
     mpv
     # Virtuaizaiton

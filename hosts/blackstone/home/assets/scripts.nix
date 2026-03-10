@@ -9,8 +9,8 @@
       ];
       text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
     })
-    (pkgs.writeShellScriptBin "resources" (builtins.readFile ./dots/.local/bin/resources.sh))
-    (pkgs.writeShellScriptBin "repos" (builtins.readFile ./dots/.local/bin/repos.sh))
-    (pkgs.writeShellScriptBin "notes" (builtins.readFile ./dots/.local/bin/notes.sh))
+    (pkgs.writeShellScriptBin "resources" (builtins.readFile ./dots/scripts/resources.sh))
+    (pkgs.writeShellScriptBin "repos" (builtins.readFile ./dots/scripts/repos.sh))
+    (pkgs.writeShellScriptBin "notes" (builtins.readFile ./dots/scripts/notes.sh))
   ];
 }

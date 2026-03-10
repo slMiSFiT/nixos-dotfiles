@@ -28,6 +28,8 @@
     // Modules configuration
   "hyprland/window": {
     "format": "{}",
+    "format-alt": " config.genz + (~/.your/goverment/is/compromized/GOY!) - wakeup ",
+    "tooltip-format": "",
     "max-length": 78,
     "separate-outputs": true,
     "rewrite": {
