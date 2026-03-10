@@ -5,9 +5,11 @@
     # keep it in order
     btop
     brave
+    chafa
     cliphist
+    discord
     fastfetch
-    feh
+    #feh
     foot
     fuzzel
     grim
@@ -20,8 +22,8 @@
     trash-cli
     waybar
     waypaper
-    #wl-clip-persist
     wl-clipboard
+    #wl-clip-persist
     yazi
     pyprland
     hypridle
@@ -32,9 +34,6 @@
     # Virtuaizaiton
     #virt-viewer
     #libvirt
-    # Internet
-    discord
-
   ];
 
   services.cliphist.enable = true;

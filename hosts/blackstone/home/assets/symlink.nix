@@ -7,7 +7,6 @@ in
   home.file = {
     "Pictures/Wallpapers".source = lnAssets "/wallpapers";
     ".config/hypr".source = lnAssets "dots/.config/hypr";
-    ".config/niri".source = lnAssets "dots/.config/niri";
     ".config/fuzzel".source = lnAssets "dots/.config/fuzzel";
     ".config/fastfetch".source = lnAssets "dots/.config/fastfetch";
     ".config/btop".source = lnAssets "dots/.config/btop";
