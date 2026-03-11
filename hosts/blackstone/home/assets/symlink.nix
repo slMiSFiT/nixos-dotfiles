@@ -6,16 +6,16 @@ in
 {
   home.file = {
     "Pictures/Wallpapers".source = lnAssets "/wallpapers";
-    ".config/hypr".source = lnAssets "dots/hypr";
-    ".config/fuzzel".source = lnAssets "dots/fuzzel";
-    ".config/fastfetch".source = lnAssets "dots/fastfetch";
-    ".config/btop".source = lnAssets "dots/btop";
-    ".config/foot".source = lnAssets "dots/foot";
-    ".config/yazi".source = lnAssets "dots/yazi";
-    ".config/waybar".source = lnAssets "dots/waybar";
-    ".config/nvim".source = lnAssets "dots/nvim";
-    ".config/swaylock".source = lnAssets "dots/swaylock";
-    ".config/mako".source = lnAssets "dots/mako";
-    ".config/waypaper".source = lnAssets "dots/waypaper";
+    ".config/hypr".source = lnAssets "dotfiles/hypr";
+    ".config/fuzzel".source = lnAssets "dotfiles/fuzzel";
+    ".config/fastfetch".source = lnAssets "dotfiles/fastfetch";
+    ".config/btop".source = lnAssets "dotfiles/btop";
+    ".config/foot".source = lnAssets "dotfiles/foot";
+    ".config/yazi".source = lnAssets "dotfiles/yazi";
+    ".config/waybar".source = lnAssets "dotfiles/waybar";
+    ".config/nvim".source = lnAssets "dotfiles/nvim";
+    ".config/swaylock".source = lnAssets "dotfiles/swaylock";
+    ".config/mako".source = lnAssets "dotfiles/mako";
+    ".config/waypaper".source = lnAssets "dotfiles/waypaper";
   };
 }

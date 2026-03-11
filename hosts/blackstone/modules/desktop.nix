@@ -21,6 +21,7 @@
   # security and permissions
   security.polkit.enable = true;
   security.pam.services.hyprlock = { };
+
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];

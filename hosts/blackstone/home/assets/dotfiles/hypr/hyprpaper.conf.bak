@@ -1,5 +1,5 @@
 wallpaper {
     monitor = eDP-1
-    path = ~/Pictures/wallpapers/gruvbox/nixos.png
+    path = ~/Pictures/Wallpapers/gruvbox/nixos.png
     fit_mode = cover
 }

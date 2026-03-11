@@ -28,7 +28,6 @@
     yazi
     pyprland
     hypridle
-    hyprpolkitagent
     hyprpaper
     mpv
     # Virtuaizaiton
@@ -36,6 +35,7 @@
     #libvirt
   ];
 
+  services.hyprpolkitagent.enable = true;
   services.cliphist.enable = true;
 
 }
