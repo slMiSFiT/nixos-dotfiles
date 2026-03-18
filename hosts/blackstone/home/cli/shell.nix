@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     # keep it in order
     fd
+    jq
     ripgrep
   ];
 

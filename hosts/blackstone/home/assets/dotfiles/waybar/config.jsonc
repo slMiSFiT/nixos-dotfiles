@@ -1,42 +1,45 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 40, // Waybar height (to be removed for auto height)
+    "height": 40,
     //"width": 1280,
     "margin-top": 4,
     "margin-right": 7,
     "margin-left": 7,
-    "spacing": 10, // Gaps between modules (4px)
+    "spacing": 10,
     "exclusive": true,
+
     // Modules Order
     "modules-left": [
-        "hyprland/workspaces",
         "idle_inhibitor",
-        "tray"
+        "hyprland/workspaces",
+        "tray",
+        "mpd"
     ],
     "modules-center": [
         "hyprland/window"
     ],
     "modules-right": [
+        "custom/moon",
         "network",
         "cpu",
         "memory",
         "battery",
         //"battery#bat2",
-        "clock"
+        "clock",
+        "custom/notification"
     ],
     // Modules configuration
   "hyprland/window": {
     "format": "{}",
-    "format-alt": " config.genz + (~/.your/goverment/is/compromized/GOY!) - wakeup ",
-    "tooltip-format": "",
+    "format-alt": "config.jsonc + (~/.how/you/doing)",
     "max-length": 78,
     "separate-outputs": true,
     "rewrite": {
-      "(.*) — Mozilla Firefox": "  $1",
-      "(.*) - zsh": "  $1",
-      "(.*) - nvim": "  $1",
-      "": ""
+      "(.*) — Zen Browser": " $1",
+      "(.*) - zsh": " $1",
+      "(.*) - nvim": " $1",
+      "": "keep it simple, keep it in control"
     }
   },
    "tray": {
@@ -49,8 +52,8 @@
     },
     "clock": {
         "format": "{:%d - %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -93,12 +96,12 @@
     //},
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% ",
+        "format-wifi": "{signalStrength}% 󰖩",
+        "format-alt": "{ipaddr}/{cidr}",
+        "format-disconnected": "Disconnected 󰖪",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-linked": "{ifname} (No IP) "
     },
     "idle_inhibitor": {
       "format": "{icon}",
@@ -108,5 +111,60 @@
     },
       "tooltip-format-activated": "Idle inhibitor ON",
       "tooltip-format-deactivated": "Idle inhibitor OFF"
+    },
+    "mpd": {
+    "max-length": 32,
+    "interval": 10,
+    "format": "{stateIcon} {title} {elapsedTime:%M:%S}  ",
+    "format-alt": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{title} {elapsedTime:%M:%S}  ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        "off": "<span color=\"#ea6962\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "custom/moon": {
+    "exec": "~/.config/waybar/scripts/moon.sh",
+    "return-type": "json",
+    "interval": 3600,
+    "format": "{}",
+    "tooltip": true
+  },
+    "custom/notification" : {
+      "tooltip" : true,
+      "tooltip-format" : "Notifications",
+      "format" : "{icon}",
+      "format-icons" : {
+        "notification" : "<span foreground=\"#ea6962\"><sup></sup></span>",
+        "none" : "",
+        "dnd-notification" : "<span foreground=\"#ea6962\"><sup></sup></span>",
+        "dnd-none" : "",
+        "inhibited-notification" : "<span foreground=\"#ea6962\"><sup></sup></span>",
+        "inhibited-none" : "",
+        "dnd-inhibited-notification" : "<span foreground=\"#ea6962\"><sup></sup></span>",
+        "dnd-inhibited-none" : ""
+      },
+      "return-type" : "json",
+      "exec-if" : "which swaync-client",
+      "exec" : "swaync-client -swb",
+      "on-click" : "swaync-client -t -sw",
+      "on-click-right" : "swaync-client -d -sw",
+      "escape" : true
     }
 }

@@ -8,11 +8,11 @@
   imports = [
     ./programs
     ./services
-    ./desktop.nix
+    ./hyprland
     ./neovim.nix
     ./cli
     ./assets/symlink.nix
-    ./assets/scripts.nix
+    ./scripts
   ];
 
   fonts.fontconfig.enable = true;

@@ -3,18 +3,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/desktop.nix
-    ./modules/laptop.nix
-    ./modules/network.nix
-    ./modules/performance.nix
-    ./modules/security.nix
-    ./modules/stylix.nix
-    ./modules/user.nix
+    ./modules/core
   ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   time.timeZone = "Africa/Casablanca";
 
@@ -38,21 +28,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
-
-  environment.systemPackages = with pkgs; [ ];
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

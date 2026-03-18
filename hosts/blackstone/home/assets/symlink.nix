@@ -14,8 +14,9 @@ in
     ".config/yazi".source = lnAssets "dotfiles/yazi";
     ".config/waybar".source = lnAssets "dotfiles/waybar";
     ".config/nvim".source = lnAssets "dotfiles/nvim";
-    ".config/swaylock".source = lnAssets "dotfiles/swaylock";
+    ".config/swaync".source = lnAssets "dotfiles/swaync";
     ".config/mako".source = lnAssets "dotfiles/mako";
     ".config/waypaper".source = lnAssets "dotfiles/waypaper";
+    ".config/rmpc".source = lnAssets "dotfiles/rmpc";
   };
 }
