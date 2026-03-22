@@ -1,0 +1,293 @@
+/* ============================================================
+   Waybar — Gruvbox Material Dark Hard
+   ============================================================
+   bg-hard : #1d2021    bg0     : #282828    bg1     : #32302f
+   bg2     : #3c3836    bg3     : #504945    bg4     : #665c54
+   fg      : #d4be98    fg1     : #ddc7a1    gray    : #928374
+   red     : #ea6962    green   : #a9b665    yellow  : #d8a657
+   blue    : #7daea3    purple  : #d3869b    aqua    : #89b482
+   orange  : #e78a4e
+   ============================================================ */
+
+/* ── Reset ───────────────────────────────────────────────── */
+* {
+  font-family: "JetBrainsMono Nerd Font", "Iosevka Nerd Font", monospace;
+  font-size: 13px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+/* ── Bar ─────────────────────────────────────────────────── */
+window#waybar {
+  background-color: transparent;
+  color: #ddc7a1;
+}
+
+window#waybar.hidden {
+  opacity: 0.1;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+}
+
+/* ── Base module ─────────────────────────────────────────── */
+#idle_inhibitor,
+#workspaces,
+#tray,
+#window,
+#network,
+#cpu,
+#memory,
+#battery,
+#clock {
+  background-color: alpha(#1d2021, 0.82);
+  color: #d4be98;
+  padding: 0 14px;
+  border-radius: 8px;
+  margin: 4px 0;
+  border-bottom: 2px solid #3c3836;
+  box-shadow: 0 2px 8px alpha(#000000, 0.5);
+}
+#custom-moon,
+#mpd,
+#custom-notification {
+  color: #d4be98;
+  font-size: 15px;
+  /*   padding: 0 1px; */
+}
+/* ── Workspaces ──────────────────────────────────────────── */
+#workspaces {
+  padding: 0 6px;
+  border-bottom-color: #d8a657;
+}
+
+#workspaces button {
+  color: #504945;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 9px;
+  margin: 3px 2px;
+  min-width: 0;
+  font-size: 12px;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+#workspaces button:hover {
+  background-color: alpha(#3c3836, 0.6);
+  color: #ddc7a1;
+  box-shadow: none;
+}
+
+#workspaces button.active {
+  background-color: alpha(#504945, 0.7);
+  color: #d8a657;
+  font-weight: bold;
+  padding: 2px 13px;
+}
+
+#workspaces button.urgent {
+  background-color: alpha(#3c3836, 0.6);
+  color: #ea6962;
+}
+
+#workspaces button.empty {
+  color: #3c3836;
+}
+
+/* ── Window title ────────────────────────────────────────── */
+#window {
+  color: #d4be98;
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  border-bottom-color: #504945;
+}
+
+#window.empty {
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom-color: transparent;
+}
+
+/* ── Idle inhibitor ──────────────────────────────────────── */
+#idle_inhibitor {
+  color: #665c54;
+  border-bottom-color: #504945;
+  font-size: 15px;
+  padding: 0 12px;
+}
+
+#idle_inhibitor.activated {
+  color: #d8a657;
+  border-bottom-color: #d8a657;
+}
+
+/* ── Tray ────────────────────────────────────────────────── */
+#tray {
+  padding: 0 10px;
+  border-bottom-color: #3c3836;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #ea6962;
+  border-radius: 6px;
+}
+
+/* ── MPD ─────────────────────────────────────────────────── */
+#mpd {
+  color: #89b482;
+  border-bottom-color: #89b482;
+  font-size: 12px;
+}
+
+#mpd.disconnected,
+#mpd.stopped {
+  color: #665c54;
+  border-bottom-color: #3c3836;
+  font-style: italic;
+}
+
+#mpd.paused {
+  color: #d8a657;
+  border-bottom-color: #d8a657;
+  font-style: italic;
+}
+
+/* ── Moon ────────────────────────────────────────────────── */
+#custom-moon {
+  color: #d3869b;
+  border-bottom-color: #d3869b;
+  font-size: 15px;
+  /*   padding: 0 12px; */
+}
+
+/* ── Network ─────────────────────────────────────────────── */
+#network {
+  color: #7daea3;
+  border-bottom-color: #7daea3;
+}
+
+#network.disconnected {
+  color: #ea6962;
+  border-bottom-color: #ea6962;
+}
+
+#network.linked {
+  color: #d8a657;
+  border-bottom-color: #d8a657;
+}
+
+#network.ethernet {
+  color: #a9b665;
+  border-bottom-color: #a9b665;
+}
+
+/* ── CPU ─────────────────────────────────────────────────── */
+#cpu {
+  color: #d3869b;
+  border-bottom-color: #d3869b;
+}
+
+#cpu.warning {
+  color: #d8a657;
+  border-bottom-color: #d8a657;
+}
+
+#cpu.critical {
+  color: #ea6962;
+  border-bottom-color: #ea6962;
+}
+
+/* ── Memory ──────────────────────────────────────────────── */
+#memory {
+  color: #89b482;
+  border-bottom-color: #89b482;
+}
+
+#memory.warning {
+  color: #d8a657;
+  border-bottom-color: #d8a657;
+}
+
+#memory.critical {
+  color: #ea6962;
+  border-bottom-color: #ea6962;
+}
+
+/* ── Battery ─────────────────────────────────────────────── */
+#battery {
+  color: #a9b665;
+  border-bottom-color: #a9b665;
+}
+
+#battery.good {
+  color: #a9b665;
+  border-bottom-color: #a9b665;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #a9b665;
+  border-bottom-color: #a9b665;
+}
+
+#battery.warning:not(.charging) {
+  color: #e78a4e;
+  border-bottom-color: #e78a4e;
+}
+
+#battery.critical:not(.charging) {
+  color: #ea6962;
+  border-bottom-color: #ea6962;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    color: #1d2021;
+    background-color: #ea6962;
+  }
+}
+
+/* ── Clock ───────────────────────────────────────────────── */
+#clock {
+  color: #d8a657;
+  border-bottom-color: #d8a657;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0 16px;
+}
+
+/* ── Notifications ───────────────────────────────────────── */
+#custom-notification {
+  color: #d4be98;
+  border-bottom-color: #504945;
+  /*   font-size: 16px; */
+  padding: 0 12px;
+}
+
+/* ── Tooltip ─────────────────────────────────────────────── */
+tooltip {
+  background-color: #282828;
+  border: 1px solid #504945;
+  border-bottom: 2px solid #d8a657;
+  border-radius: 8px;
+  color: #d4be98;
+  box-shadow: 0 4px 16px alpha(#000000, 0.6);
+}
+
+tooltip label {
+  color: #d4be98;
+  padding: 2px 6px;
+}

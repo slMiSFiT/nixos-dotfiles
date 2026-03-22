@@ -1,0 +1,379 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "small",
+//    "type": "media-cover",
+//    "source": "~/.config/fastfetch/ascii.txt",
+//    "source": "~/.config/fastfetch/logo.png",
+//    "type": "sixel",
+//    "preserveAspectRatio": true,
+//    "source": "Linux",
+    "color": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": ""
+    },
+    "width": null,
+    "height": null,
+    "padding": {
+      "top": 4,
+      "left": 5,
+      "right": 5 
+    },
+    "printRemaining": true,
+    "preserveAspectRatio": false,
+    "recache": false,
+    "position": "left",
+    "chafa": {
+      "fgOnly": false,
+      "symbols": "block+border+space-wide-inverted"
+    }
+  },
+  "display": {
+    "stat": false,
+    "pipe": false,
+    "showErrors": false,
+    "disableLinewrap": true,
+    "hideCursor": false,
+    "separator": " ",
+    "color": {
+      "keys": "",
+      "title": "",
+      "output": "",
+      "separator": ""
+    },
+    "brightColor": true,
+    "duration": {
+      "abbreviation": false,
+      "spaceBeforeUnit": "default"
+    },
+    "size": {
+      "maxPrefix": "YB",
+      "binaryPrefix": "iec",
+      "ndigits": 2,
+      "spaceBeforeUnit": "default"
+    },
+    "temp": {
+      "unit": "D",
+      "ndigits": 1,
+      "color": {
+        "cyan": "32",
+        "cyan": "93",
+        "red": "91"
+      },
+      "spaceBeforeUnit": "default"
+    },
+    "percent": {
+      "type": [
+        "num",
+        "num-color"
+      ],
+      "ndigits": 0,
+      "color": {
+        "cyan": "32",
+        "cyan": "93",
+        "red": "91"
+      },
+      "spaceBeforeUnit": "default",
+      "width": 0
+    },
+    "bar": {
+      "char": {
+        "elapsed": "■",
+        "total": "-"
+      },
+      "border": {
+        "left": "[ ",
+        "right": " ]",
+        "leftElapsed": "",
+        "rightElapsed": ""
+      },
+      "color": {
+        "elapsed": "auto",
+        "total": "97",
+        "border": "97"
+      },
+      "width": 10
+    },
+    "fraction": {
+      "ndigits": 2
+    },
+    "noBuffer": false,
+    "key": {
+      "width": 0,
+      "type": "string",
+      "paddingLeft": 0
+    },
+    "freq": {
+      "ndigits": 2,
+      "spaceBeforeUnit": "default"
+    },
+    "constants": []
+  },
+  "general": {
+    "thread": true,
+    "processingTimeout": 5000,
+    "detectVersion": true,
+    "playerName": "",
+    "dsForceDrm": false
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": " ",
+      "keyIcon": "",
+      "fqdn": false,
+      "color": {
+        "user": "cyan",
+        "at": "green",
+        "host": "blue"
+      }
+    },
+    {
+      "type": "separator",
+      "string": "▔",
+      "outputColor": "",
+      "times": 0
+    },
+    // {
+    //   "type": "cpu",
+    //   "keyIcon": "",
+    //   "key": " CPU",
+    //   "temp": false,
+    //   "showPeCoreCount": false
+    // },
+    // {
+    //   "type": "gpu",
+    //   "keyIcon": "󰾲",
+    //   "key": "󰾲 GPU",
+    //   "driverSpecific": false,
+    //   "detectionMethod": "pci",
+    //   "temp": false,
+    //   "hideType": "none",
+    //   "percent": {
+    //     "cyan": 50,
+    //     "cyan": 80,
+    //     "type": 0
+    //   }
+    // },
+    // {
+    //   "type": "memory",
+    //   "keyIcon": "",
+    //   "key": " Memory",
+    //   "percent": {
+    //     "cyan": 50,
+    //     "cyan": 80,
+    //     "type": 0
+    //   }
+    // },
+    // {
+    //   "type": "localip",
+    //   "keyIcon": "󰩟",
+    //   "key": "󰩟 Localtip",
+    //   "showIpv4": true,
+    //   "showIpv6": false,
+    //   "showMac": false,
+    //   "showLoop": false,
+    //   "showPrefixLen": true,
+    //   "showMtu": false,
+    //   "showSpeed": false,
+    //   "showFlags": false,
+    //   "compact": false,
+    //   "defaultRouteOnly": true,
+    //   "showAllIps": false,
+    //   "namePrefix": ""
+    // },
+    // {
+    //   "type": "battery",
+    //   "keyIcon": "",
+    //   "key": " Battery",
+    //   "temp": false,
+    //   "percent": {
+    //     "cyan": 50,
+    //     "cyan": 20,
+    //     "type": 0
+    //   }
+    // },
+    // {
+    //   "type": "poweradapter",
+    //   "keyIcon": "󰚥",
+    //   "key": "󰚥 Poweradapter"
+    // },
+    // {
+    //   "type": "locale",
+    //   "keyIcon": "",
+    //   "key": " Locale"
+    // },
+    {
+      "type": "host",
+      "key": "󰌢 Host",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "os",
+      "key": "  ├─",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "kernel",
+      "key": "  ├─",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "packages",
+      "key": "  ├─󰏖",
+      "keyColor": "cyan",
+      "format": "{nix-system} (system), {nix-user} (user)",
+      "disabled": [
+        "winget"
+      ],
+      "combined": false
+    },
+    { "type": "command",
+      "key": "  ├─󰃭", 
+      "text": "birth_install=$(stat -c %W /); current=$(date +%s); diff=$((current - birth_install)); echo $((diff / 86400)) days" ,
+      "keyColor": "cyan"
+    },
+    {
+      "type": "uptime",
+      "key": "  └─",
+      "keyColor": "cyan"
+    },
+
+    "break",
+    // {
+    //   "type": "disk",
+    //   "keyIcon": "",
+    //   "key": " Disk",
+    //   "showRegular": true,
+    //   "showExternal": true,
+    //   "showHidden": false,
+    //   "showSubvolumes": false,
+    //   "showReadOnly": true,
+    //   "showUnknown": false,
+    //   "folders": "",
+    //   "hideFolders": "/efi:/boot:/boot/*",
+    //   "hideFS": "",
+    //   "useAvailable": false,
+    //   "percent": {
+    //     "cyan": 50,
+    //     "cyan": 80,
+    //     "type": 0
+    //   }
+    // },
+    // {
+    //   "type": "display",
+    //   "keyIcon": "󰍹",
+    //   "key": "󰍹 Display",
+    //   "compactType": "none",
+    //   "preciseRefreshRate": false,
+    //   "order": null
+    // },
+    {
+      "type": "wm",
+      "key": " DE/WM",
+      "format": "{1} {version}",
+      "detectPlugin": false,
+      "keyColor": "blue"
+    },
+//     {
+//       "type": "lm",
+//       "key": "  ├─󰍂",
+//       "keyColor": "blue",
+// //      "format": "{service} {(type)} {version}",
+//       "detectPlugin": false
+//     },
+   {
+      "type": "shell",
+      "key": "  ├─",
+      "keyColor": "blue"
+    },
+    {
+      "type": "terminal",
+      "keyIcon": "",
+      "key": "  ├─",
+      "keyColor": "blue"
+    },
+    // {
+    //   "type": "terminalfont",
+    //   "key": "  ├─",
+    //   "format": "{name}",
+    //   "keyColor": "blue"
+    // },
+    {
+      "type": "editor",
+      "keyIcon": "",
+      "key": "  └─󱩼",
+      "keyColor": "blue"
+    },
+
+    "break",
+    //  {
+    //    "type": "theme",
+    //    "key": "󰉼 Theme",
+    //   "format": "{theme2}",
+    //    "keyColor": "blue"
+    //  },
+    // {
+    //   "type": "wmtheme",
+    //   "key": "  ├─ ",
+    //   "keyColor": "blue"
+    // },
+    // {
+    //   "type": "icons",
+    //   "key": "  ├─󰉋",
+    //   "format": "{icons1}",
+    //   "keyColor": "blue"
+    // },
+    // {
+    //   "type": "cursor",
+    //   "key": "  ├─󰆿",
+    //   "keyColor": "blue"
+    // },
+    // {
+    //   "type": "font",
+    //   "key": "  ├─",
+    //   "format": "{2}",
+    //   "keyColor": "blue"
+    // },
+    //
+    // {
+    //   "type": "terminalfont",
+    //   "key": "  └─",
+    //   "format": "{name}",
+    //   "keyColor": "blue"
+    // },
+    // "break",
+    {
+      "type": "colors",
+      "key": " ",
+      "keyIcon": "",
+      "symbol": "diamond",
+      "paddingLeft": 3,
+      "block": {
+        "width": 9,
+        "range": [
+          0,
+          15
+        ]
+      }
+    },
+{
+  "type": "command",
+  "key": "󰝚 Music",
+  "text": "rmpc song 2>/dev/null | tail -1 | jq -r '\"\\(.metadata.artist) - \\(.metadata.title)\"'"
+}
+    // {
+    //   "type": "media",
+    //   "key": "󰎇",
+    //   "format": "{}",
+    //   "keyColor": "yellow"
+    // }
+  ]
+}
