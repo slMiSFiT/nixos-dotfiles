@@ -22,13 +22,12 @@ $ reboot
 
 ```
 
-## Post Installation
-
-> [!TODO] Todo:
+> [!TODO] Post Installation:
 >
-> - restore backed up files
-> - setup syncthing
-> - setup ssh
+> - update syncthing devices id
+> - setup browser(sync, tweak settings)
+> - restore backed up files if any
+> - setup/restore ssh-keys, gnupg-keys
 
 ### License
 

@@ -30,6 +30,4 @@
 
   services.hyprpolkitagent.enable = true;
   services.cliphist.enable = true;
-  programs.cava.enable = true;
-
 }

@@ -1,10 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services.mpd = {
     enable = true;
-    musicDirectory = "~/Sync/music";
+    musicDirectory = "~/Sync/Music";
     # Optional:
-    network.listenAddress = "any"; # if you want to allow non-localhost connections
+    #    network.listenAddress = "any"; # if you want to allow non-localhost connections
     network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
     #    extraConfig = ''
     #      audio_output {
@@ -14,4 +14,8 @@
     #    '';
   };
   programs.rmpc.enable = true;
+  home.packages = with pkgs; [
+    picard
+    cava
+  ];
 }
