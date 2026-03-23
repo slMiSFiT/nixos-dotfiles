@@ -1,34 +1,55 @@
 # nixos-dotfiles
 
-> My personal NixOS configuration using flakes and home-manager + dotfiles.
+My personal NixOS configuration using flakes and home-manager.
 
-> [!NOTE] Note:
-> This configuration is tailored to my hardware. Do not apply it directly — use it as a reference.
+> [!IMPORTANT]
+> This configuration is tailored to my hardware — do not apply it directly.
+> Use it as a reference or fork it and adapt it to your own setup.
+
+---
+
+## Before You Use This
+
+If you're adapting this for your own machine, make sure to update:
+
+- **Hostname** — defined in `flake.nix`, `hosts/<hostname>/default.nix` and shell aliases.
+- **Username** — used throughout the config and home-manager modules
+- **Screen resolution & refresh rate** — set in the hyprland config for your display
+- **Hardware configuration** — always regenerate with `nixos-generate-config` on your machine
+
+---
 
 ## Installation
 
-> [!IMPORTANT] Important:
-> match hostname & username!
-
 ```bash
+# 1. Clone the repo
+git clone https://github.com/slMiSFiT/nixos-dotfiles ~/.nixos
 
-$ git clone https://github.com/slMiSFiT/nixos-dotfiles ~/.nixos
+# 2. Copy your machine's hardware config
+cp /etc/nixos/hardware-configuration.nix ~/.nixos/hosts/<hostname>/
 
-$ cp /etc/nixos/hardware-configuration ~/.nixos/host/
+# 3. Build and switch (boots into new config on next reboot)
+sudo nixos-rebuild boot --flake ~/.nixos#<hostname>
 
-$ sudo nixos-rebuild boot --flake ~/.nixos#blackstone
-
-$ reboot
-
+# 4. Reboot
+reboot
 ```
 
-> [!TODO] Post Installation:
->
-> - update syncthing devices id
-> - setup browser(sync, tweak settings)
-> - restore backed up files if any
-> - setup/restore ssh-keys, gnupg-keys
+---
 
-### License
+## Post Installation
 
-MIT
+Things that can't/won't be automated and need to be done manually after a fresh install:
+
+- [ ] Update firmware (fwupd)
+- [ ] Update Syncthing device IDs
+- [ ] Set up browser (extensions, settings, account)
+- [ ] Restore backed up files if any
+- [ ] Set up SSH keys
+- [ ] Restore GPG keys
+
+---
+
+## License
+
+[MIT](./LICENSE)

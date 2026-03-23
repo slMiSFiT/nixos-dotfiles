@@ -1,6 +1,15 @@
 { pkgs, ... }:
 {
 
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extraArgs = "--keep-since 7d --keep 5";
+    };
+    flake = "/home/misfit/.nixos";
+  };
+
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -17,11 +26,13 @@
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 7d";
-    };
+
+    # NOTE: nh is used instead
+    # gc = {
+    #   automatic = true;
+    #   dates = "daily";
+    #   options = "--delete-older-than 7d";
+    # };
 
   };
 
@@ -29,9 +40,5 @@
   #  enable = true;
   #  dates = "weekly";
   #};
-
-  environment.systemPackages = with pkgs; [
-    wget
-  ];
 
 }

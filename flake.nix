@@ -31,7 +31,7 @@
       nixosConfigurations = {
         blackstone = nixpkgs.lib.nixosSystem {
           modules = [
-            ./host
+            ./hosts/blackstone
             home-manager.nixosModules.home-manager
             {
               home-manager = {

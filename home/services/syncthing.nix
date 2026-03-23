@@ -14,18 +14,19 @@
         urAccepted = -1; # disable anonymous usage reporting
         relaysEnabled = false; # disable relay servers for privacy
       };
+
+      folders = {
+        "Sync" = {
+          path = "${config.home.homeDirectory}/Sync";
+          devices = [ "cherymoya" ];
+          # id defaults to the attribute name ("Sync") — fine for one folder
+        };
+      };
+
       devices = {
         "cherymoya" = {
           autoAcceptFolders = true;
           id = "PYBS6QO-OXPLA3W-XEAHFHI-IHDE557-DMD6F3B-NQZJVET-J4HOVO2-DIYIJAX";
-        };
-
-        folders = {
-          "Sync" = {
-            path = "${config.home.homeDirectory}/Sync";
-            devices = [ "cherymoya" ];
-            # id defaults to the attribute name ("Sync") — fine for one folder
-          };
         };
 
       };

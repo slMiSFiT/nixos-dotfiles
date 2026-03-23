@@ -2,7 +2,6 @@
 
 {
 
-  networking.hostName = "blackstone";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -10,22 +9,46 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager = {
-    enable = true;
-    wifi.scanRandMacAddress = true;
-    wifi.macAddress = "random";
-    ethernet.macAddress = "stable";
+  networking = {
+    nameservers = [
+      "1.1.1.1#cloudflare-dns.com"
+      "1.0.0.1#cloudflare-dns.com"
+    ];
+    networkmanager = {
+      enable = true;
+      wifi = {
+        scanRandMacAddress = true;
+        macAddress = "random";
+      };
+      ethernet.macAddress = "stable";
+      dns = "systemd-resolved";
+      connectionConfig = {
+        "ipv4.ignore-auto-dns" = true;
+        "ipv6.ignore-auto-dns" = true;
+      };
+    };
   };
 
-  #   services.resolved = {
-  #     enable = true;
-  #     dnssec = "true";
-  #     dnsOverTls = "true";
-  #     fallbackDns = [
-  #       "1.1.1.1#cloudflare-dns.com"
-  #       "9.9.9.9#dns.quad9.net"
-  #     ];
+  services.resolved = {
+    enable = true;
+    settings = {
+      Resolve = {
+        DNS = config.networking.nameservers;
+        DNSOverTLS = true;
+        DNSSEC = true;
+        Domains = [ "~." ];
+      };
+    };
+  };
+
+  # services.dnscrypt-proxy2 = {
+  #   enable = true;
+  #   settings = {
+  #     ipv6_servers = true;
+  #     require_dnssec = true;
+  #     require_nolog = true;    # only use servers that don't log
   #   };
+  # };
 
   # services.openssh = {
   #   enable = true;

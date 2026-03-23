@@ -2,7 +2,6 @@
 {
   imports = [
     ./desktop.nix
-    ./laptop.nix
     ./network.nix
     ./performance.nix
     ./security.nix
@@ -12,7 +11,7 @@
     ./user.nix
     ./bootloader.nix
     ./bluetooth.nix
-    #./nh.nix
+    #./stylix.nix
   ];
 
 }

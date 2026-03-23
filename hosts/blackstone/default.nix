@@ -3,8 +3,11 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/core
+    ../../modules/core
+    ../../modules/extra/laptop.nix
   ];
+
+  networking.hostName = "blackstone";
 
   time.timeZone = "Africa/Casablanca";
 

@@ -32,7 +32,6 @@
   "hyprland/window": {
     "format": "{}",
     "format-alt": "config.lua (~/.they/dont/really/care/about/us)",
-    "max-length": 78,
     "separate-outputs": true,
     "rewrite": {
       "(.*) — Zen Browser": " $1",

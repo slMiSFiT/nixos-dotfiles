@@ -32,6 +32,7 @@ window#waybar.hidden {
 .modules-center,
 .modules-right {
   background: transparent;
+  margin: 0 5px;
 }
 
 /* ── Base module ─────────────────────────────────────────── */
@@ -46,22 +47,21 @@ window#waybar.hidden {
 #clock {
   background-color: alpha(#1d2021, 0.82);
   color: #d4be98;
-  padding: 0 14px;
+  padding: 0 13px;
   border-radius: 8px;
-  margin: 4px 0;
+  margin: 3px 0;
   border-bottom: 2px solid #3c3836;
   box-shadow: 0 2px 8px alpha(#000000, 0.5);
 }
 #custom-moon,
-#mpd,
 #custom-notification {
   color: #d4be98;
   font-size: 15px;
-  /*   padding: 0 1px; */
+  padding: 0 7px;
 }
 /* ── Workspaces ──────────────────────────────────────────── */
 #workspaces {
-  padding: 0 6px;
+  padding: 0 5px;
   border-bottom-color: #d8a657;
 }
 
@@ -146,9 +146,9 @@ window#waybar.hidden {
 
 /* ── MPD ─────────────────────────────────────────────────── */
 #mpd {
-  color: #89b482;
-  border-bottom-color: #89b482;
+  color: #d4be98;
   font-size: 12px;
+  padding: 0 5px;
 }
 
 #mpd.disconnected,
@@ -267,14 +267,6 @@ window#waybar.hidden {
   font-weight: 600;
   letter-spacing: 0.04em;
   padding: 0 16px;
-}
-
-/* ── Notifications ───────────────────────────────────────── */
-#custom-notification {
-  color: #d4be98;
-  border-bottom-color: #504945;
-  /*   font-size: 16px; */
-  padding: 0 12px;
 }
 
 /* ── Tooltip ─────────────────────────────────────────────── */
