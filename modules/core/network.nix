@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
 
@@ -11,8 +11,8 @@
   # Enable networking
   networking = {
     nameservers = [
-      "1.1.1.1#cloudflare-dns.com"
-      "1.0.0.1#cloudflare-dns.com"
+      "1.1.1.1"
+      "1.0.0.1"
     ];
     networkmanager = {
       enable = true;
@@ -22,10 +22,6 @@
       };
       ethernet.macAddress = "stable";
       dns = "systemd-resolved";
-      connectionConfig = {
-        "ipv4.ignore-auto-dns" = true;
-        "ipv6.ignore-auto-dns" = true;
-      };
     };
   };
 
@@ -50,6 +46,26 @@
   #   };
   # };
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      } # Kdeconnect
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      } # Kdeconnect
+    ];
+    #allowedTCPPorts = [ ... ];
+    #allowedUDPPorts = [ ... ];
+  };
+
+  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
+
   # services.openssh = {
   #   enable = true;
   #   ports = [ 5927 ];
@@ -70,25 +86,6 @@
   #   port = 22;
   #   openFirewall = true;
   # };
-
-  networking.firewall = {
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      } # Kdeconnect
-    ];
-    allowedUDPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      } # Kdeconnect
-    ];
-    #allowedTCPPorts = [ ... ];
-    #allowedUDPPorts = [ ... ];
-  };
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

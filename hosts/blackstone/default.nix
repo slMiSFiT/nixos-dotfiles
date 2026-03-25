@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../modules/core
     ../../modules/extra/laptop.nix
+    ../../modules/extra/virtualization.nix
   ];
 
   networking.hostName = "blackstone";
