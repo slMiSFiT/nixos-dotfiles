@@ -9,11 +9,5 @@
 
     kernelPackages = pkgs.linuxPackages_latest;
     #supportedFilesystems = [ "ntfs" ];
-
-    kernel.sysctl = {
-      "vm.swappiness" = 50;
-      "vm.vfs_cache_pressure" = 70;
-    };
-
   };
 }

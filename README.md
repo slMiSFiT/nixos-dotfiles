@@ -47,7 +47,7 @@ Things that can't/won't be automated and need to be done manually after a fresh 
 - [ ] Restore backed up files if any
 - [ ] Set up SSH keys
 - [ ] Restore GPG keys
-- [ ] VM - Start the default network
+- [ ] VM - Start/autostart the default network
 
 ---
 
