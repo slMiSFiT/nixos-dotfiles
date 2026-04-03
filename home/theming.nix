@@ -21,7 +21,6 @@ in
   home.packages = with pkgs; [
     # Fonts
     nerd-fonts.jetbrains-mono
-    maple-mono.CN
     dejavu_fonts
     noto-fonts-color-emoji
 
@@ -31,7 +30,7 @@ in
       enable = true;
       defaultFonts = {
         monospace = [ "JetBrainsMono Nerd Font" ];
-        sansSerif = [ "Maple Mono" ];
+        sansSerif = [ "DejaVu Sans" ];
         serif = [ "DejaVu Serif" ];
         emoji = [ "Noto Color Emoji" ];
       };
@@ -43,7 +42,7 @@ in
     colorScheme = "dark";
 
     font = {
-      name = "Maple Mono";
+      name = "DejaVu Sans";
       size = 12;
     };
     theme = {

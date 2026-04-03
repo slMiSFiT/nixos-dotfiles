@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  
+  services.fstrim.enable = true;
+  #services.fwupd.enable = true; # for firmware update
 
   boot.kernel.sysctl = {
     "vm.swappiness" = 50;

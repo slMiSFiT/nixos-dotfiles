@@ -6,13 +6,11 @@
   home.stateVersion = "25.11";
 
   imports = [
-    ./assets/symlink.nix
+    ./assets
     ./programs
-    ./services
-    ./hyprland
-    ./shell
     ./scripts
-    ./neovim.nix
+    ./services
+    ./shell
     ./theming.nix
   ];
 

@@ -7,16 +7,12 @@
       enable = true;
       extraArgs = "--keep-since 7d --keep 5";
     };
-    flake = "/home/misfit/.nixos";
+    flake = "/home/misfit/.nixos-config";
   };
 
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
       substituters = [
         "https://nix-community.cachix.org"
         "https://hyprland.cachix.org"

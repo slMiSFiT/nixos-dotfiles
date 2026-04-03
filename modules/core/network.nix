@@ -2,20 +2,35 @@
 
 {
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 
-  # Configure network proxy if necessary
+  networking.firewall = {
+    enable = true;
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      } # Kdeconnect
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      } # Kdeconnect
+    ];
+    #allowedTCPPorts = [ ... ];
+    #allowedUDPPorts = [ ... ];
+  };
+
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
   networking = {
     nameservers = [
       "1.1.1.1"
       "1.0.0.1"
     ];
     networkmanager = {
-      enable = true;
       wifi = {
         scanRandMacAddress = true;
         macAddress = "random";
@@ -45,26 +60,6 @@
   #     require_nolog = true;    # only use servers that don't log
   #   };
   # };
-
-  networking.firewall = {
-    enable = true;
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      } # Kdeconnect
-    ];
-    allowedUDPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      } # Kdeconnect
-    ];
-    #allowedTCPPorts = [ ... ];
-    #allowedUDPPorts = [ ... ];
-  };
-
-  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 
   # services.openssh = {
   #   enable = true;

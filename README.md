@@ -23,13 +23,13 @@ If you're adapting this for your own machine, make sure to update:
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/slMiSFiT/nixos-dotfiles ~/.nixos
+git clone https://github.com/slMiSFiT/nixos-dotfiles ~/.nixos-config
 
 # 2. Copy your machine's hardware config
 cp /etc/nixos/hardware-configuration.nix ~/.nixos/hosts/<hostname>/
 
 # 3. Build and switch (boots into new config on next reboot)
-sudo nixos-rebuild boot --flake ~/.nixos#<hostname>
+sudo nixos-rebuild boot --flake ~/.nixos-config#<hostname>
 
 # 4. Reboot
 reboot

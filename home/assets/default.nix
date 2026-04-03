@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  assets = "${config.home.homeDirectory}/.nixos/home/assets";
+  assets = "${config.home.homeDirectory}/.nixos-config/home/assets";
   lnAssets = path: config.lib.file.mkOutOfStoreSymlink "${assets}/${path}";
 in
 {

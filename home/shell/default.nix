@@ -21,15 +21,11 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      find = "fd";
-      grep = "rg";
-      jctl = "journalctl -p 3 -xb";
-
-      nrs = "sudo nixos-rebuild switch --flake ~/.nixos#blackstone";
-      nrt = "sudo nixos-rebuild test --flake ~/.nixos#blackstone";
-      nrb = "sudo nixos-rebuild boot --flake ~/.nixos#blackstone";
-      nrr = "sudo nixos-rebuild switch --rollback"; # prev gen
-      ncg = "sudo nix-collect-garbage -d";
+      nrs = "nixos-rebuild switch --flake ~/.nixos-config#blackstone --sudo";
+      nrt = "nixos-rebuild test --flake ~/.nixos-config#blackstone --sudo";
+      nrb = "nixos-rebuild boot --flake ~/.nixos-config#blackstone --sudo";
+      nrr = "nixos-rebuild switch --rollback --sudo"; # prev gen
+      ncg = "nix-collect-garbage -d ";
       nca = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       nfs = "nix flake show"; # Check flake structure
       nfu = "nix flake update"; # Update flake inputs
@@ -49,9 +45,6 @@
   };
   programs.starship = {
     enable = true;
-    settings = {
-      add_newline = false;
-      command_timeout = 500;
-    };
+    enableZshIntegration = true;
   };
 }

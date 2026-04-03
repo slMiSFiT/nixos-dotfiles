@@ -1,7 +1,6 @@
 {
-  description = "NixOs from Scratch";
+  description = "My NixOS from Scratch";
   inputs = {
-
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
