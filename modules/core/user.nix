@@ -4,13 +4,13 @@
   users.users.misfit = {
     isNormalUser = true;
     description = "soufiane";
-    #shell = pkgs.zsh;
+    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
     packages = with pkgs; [ ];
   };
-  # programs.zsh.enable = true;
+  programs.zsh.enable = true;
 
 }

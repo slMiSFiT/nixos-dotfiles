@@ -1,11 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
 
-  imports = [
-    ./symlink.nix
-    ./swaync
-    ./waypaper.nix
-  ];
+  xdg.configFile."hypr".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nixos-config/home/programs/hypr/config";
 
   services.hyprpolkitagent.enable = true;
   services.cliphist.enable = true;
@@ -16,8 +13,6 @@
     cliphist
     cmatrix
     fastfetch
-    foot
-    fuzzel
     gammastep
     grim
     grimblast
@@ -25,10 +20,8 @@
     keepassxc
     rofimoji
     trash-cli
-    waybar
     wl-clipboard
     wl-clip-persist
-    yazi
     hyprlock
     hypridle
     hyprpaper

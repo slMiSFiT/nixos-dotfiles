@@ -10,6 +10,7 @@
     ./scripts
     ./services
     ./shell
+    ./wallpapers
     ./theming.nix
   ];
 
