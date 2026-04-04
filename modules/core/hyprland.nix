@@ -36,15 +36,13 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  services.udisks2.enable = true;
-  #services.gvfs.enable = true;
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
   programs.thunar = {
     enable = true;
     plugins = with pkgs; [
-      #xfce4-exo
-      #thunar-archive-plugin
-      #thunar-volman
-      #tumbler
+      thunar-archive-plugin
+      thunar-volman # Automatic management of removable devices
+      tumbler # generate thumbnails
     ];
   };
 

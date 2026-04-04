@@ -29,10 +29,8 @@ git clone https://github.com/slMiSFiT/nixos-dotfiles ~/.nixos-config
 cp /etc/nixos/hardware-configuration.nix ~/.nixos/hosts/<hostname>/
 
 # 3. Build and switch (boots into new config on next reboot)
-sudo nixos-rebuild boot --flake ~/.nixos-config#<hostname>
+nixos-rebuild boot --flake ~/.nixos-config#<hostname> --sudo
 
-# 4. Reboot
-reboot
 ```
 
 ---
@@ -41,13 +39,11 @@ reboot
 
 Things that can't/won't be automated and need to be done manually after a fresh install:
 
-- [ ] Update firmware (fwupd)
 - [ ] Update Syncthing device IDs
 - [ ] Set up browser (extensions, settings, account)
 - [ ] Restore backed up files if any
-- [ ] Set up SSH keys
-- [ ] Restore GPG keys
-- [ ] VM - Start/autostart the default network
+- [ ] Restore/Set up SSH/GPG keys
+- [ ] Update firmware (fwupd)
 
 ---
 
