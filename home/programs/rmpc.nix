@@ -16,6 +16,5 @@
   programs.rmpc.enable = true;
   home.packages = with pkgs; [
     picard
-    cava
   ];
 }

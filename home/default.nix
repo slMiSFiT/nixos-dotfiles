@@ -6,7 +6,6 @@
   home.stateVersion = "25.11";
 
   imports = [
-    ./assets
     ./programs
     ./scripts
     ./services

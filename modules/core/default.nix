@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./audio.nix
     ./bootloader.nix
     ./hyprland.nix
     ./network.nix

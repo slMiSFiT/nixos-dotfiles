@@ -9,6 +9,14 @@
   };
 
   nix = {
+
+    # NOTE: nh is used instead
+    # gc = {
+    #   automatic = true;
+    #   dates = "daily";
+    #   options = "--delete-older-than 7d";
+    # };
+
     settings = {
       auto-optimise-store = true;
       substituters = [
@@ -21,18 +29,6 @@
       ];
     };
 
-    # NOTE: nh is used instead
-    # gc = {
-    #   automatic = true;
-    #   dates = "daily";
-    #   options = "--delete-older-than 7d";
-    # };
-
   };
-
-  #system.autoUpgrade = {
-  #  enable = true;
-  #  dates = "weekly";
-  #};
 
 }

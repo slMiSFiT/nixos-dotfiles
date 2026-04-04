@@ -1,8 +1,17 @@
 { pkgs, ... }:
 {
+
+  imports = [
+    ./symlink.nix
+    ./swaync
+    ./waypaper.nix
+  ];
+
+  services.hyprpolkitagent.enable = true;
+  services.cliphist.enable = true;
+
   home.packages = with pkgs; [
     # keep it in order
-    btop
     brave
     cliphist
     cmatrix
@@ -13,12 +22,10 @@
     grim
     grimblast
     slurp
-    swaynotificationcenter
     keepassxc
     rofimoji
     trash-cli
     waybar
-    waypaper
     wl-clipboard
     wl-clip-persist
     yazi
@@ -28,6 +35,4 @@
     mpv
   ];
 
-  services.hyprpolkitagent.enable = true;
-  services.cliphist.enable = true;
 }
