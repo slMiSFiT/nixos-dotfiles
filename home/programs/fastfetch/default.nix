@@ -1,8 +1,9 @@
 { config, pkgs, ... }:
+let
+  dir = builtins.toString ./.;
+in
 {
+  xdg.configFile."fastfetch".source = config.lib.file.mkOutOfStoreSymlink "${dir}/config";
+
   home.packages = with pkgs; [ fastfetch ];
-
-  xdg.configFile."fastfetch".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nixos-config/home/programs/fastfetch/config/";
-
 }

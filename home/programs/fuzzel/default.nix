@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
+let
+  dir = builtins.toString ./.;
+in
 {
-  home.packages = with pkgs; [ fuzzel ];
+  xdg.configFile."fuzzel".source = config.lib.file.mkOutOfStoreSymlink "${dir}/config";
 
-  xdg.configFile."fuzzel".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nixos-config/home/programs/fuzzel/config";
+  home.packages = with pkgs; [ fuzzel ];
 }

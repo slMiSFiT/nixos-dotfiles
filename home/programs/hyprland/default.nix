@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
+let
+  dir = builtins.toString ./.;
+in
 {
 
-  xdg.configFile."hypr".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nixos-config/home/programs/hypr/config";
+  xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${dir}/config";
 
   services.hyprpolkitagent.enable = true;
   services.cliphist.enable = true;

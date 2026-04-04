@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
+let
+  dir = builtins.toString ./.;
+in
 {
-  home.packages = with pkgs; [ yazi ];
 
-  xdg.configFile."yazi".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nixos-config/home/programs/yazi/config";
+  xdg.configFile."yazi".source = config.lib.file.mkOutOfStoreSymlink "${dir}/config";
+
+  home.packages = with pkgs; [ yazi ];
 }

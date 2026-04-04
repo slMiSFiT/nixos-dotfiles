@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
+let
+  dir = builtins.toString ./.;
+in
 {
-  xdg.configFile."nvim".source =
-  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nixos-config/home/programs/nvim/config";
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${dir}/config";
 
   programs.neovim = {
     enable = true;

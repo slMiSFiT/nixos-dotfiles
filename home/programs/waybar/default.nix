@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
+let
+  dir = builtins.toString ./.;
+in
 {
-  home.packages = with pkgs; [ waybar ];
+  xdg.configFile."waybar".source = config.lib.file.mkOutOfStoreSymlink "${dir}/config";
 
-  xdg.configFile."waybar".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nixos-config/home/programs/waybar/config";
+  home.packages = with pkgs; [ waybar ];
 }
