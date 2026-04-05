@@ -1,12 +1,14 @@
 { pkgs, ... }:
 {
 
-  services.displayManager.ly = {
-    enable = true;
-    settings = {
-      vi_mode = true;
-      #animation = "matrix";
-      clock = "%d - %H:%M";
+  services.displayManager = {
+    ly = {
+      enable = true;
+      settings = {
+        vi_mode = true;
+        #animation = "matrix";
+        clock = "%d - %H:%M";
+      };
     };
   };
 
