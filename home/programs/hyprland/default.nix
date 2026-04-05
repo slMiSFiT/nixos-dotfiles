@@ -11,10 +11,7 @@ in
 
   home.packages = with pkgs; [
     # keep it in order
-    brave
-    cliphist
     cmatrix
-    fastfetch
     gammastep
     grim
     grimblast
@@ -27,7 +24,6 @@ in
     hyprlock
     hypridle
     hyprpaper
-    mpv
   ];
 
 }

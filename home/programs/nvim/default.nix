@@ -12,12 +12,13 @@ in
   };
 
   home.packages = with pkgs; [
-    # Lsp
+    # Lsps
     nixd
-    #nil
     # Formatters
     stylua
+    shfmt
     prettier
+    treefmt
     nixfmt
     hyprlang
   ];

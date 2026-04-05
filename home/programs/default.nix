@@ -2,18 +2,21 @@
 
 {
   imports = [
+    # keep it in order
     ./fastfetch
     ./foot
     ./fuzzel
     ./hyprland
     ./nvim
+    #./rofi
     ./swaync
     ./waybar
     ./waypaper
     ./yazi
+    ./browser.nix
     ./btop.nix
     ./cava.nix
-    ./zen-browser.nix
+    ./mpv.nix
     ./rmpc.nix
     ./yt-dlp.nix
   ];

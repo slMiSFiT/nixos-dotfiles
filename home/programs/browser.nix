@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -10,4 +10,7 @@
     enable = true;
     setAsDefaultBrowser = true;
   };
+
+  # Secondary
+  home.packages = with pkgs; [ brave ];
 }
