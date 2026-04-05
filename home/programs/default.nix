@@ -18,6 +18,7 @@
     ./cava.nix
     ./mpv.nix
     ./rmpc.nix
+    ./tealdeer.nix
     ./yt-dlp.nix
   ];
 }

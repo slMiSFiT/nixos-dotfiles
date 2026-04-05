@@ -11,7 +11,8 @@
     ./services
     ./shell
     ./wallpapers
-    ./theming.nix
+    ./fonts.nix
+    ./gtk.nix
   ];
 
   programs.home-manager.enable = true;
