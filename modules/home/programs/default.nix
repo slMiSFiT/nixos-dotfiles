@@ -15,6 +15,7 @@
     ./browser.nix
     ./btop.nix
     ./cava.nix
+    ./discord.nix
     ./mpv.nix
     ./rmpc.nix
     ./yt-dlp.nix

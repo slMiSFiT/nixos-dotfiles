@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  dots = "${config.home.homeDirectory}/.nixos-config/home/programs/foot/dots";
+  dots = "${config.home.homeDirectory}/.nixos-config/modules/home/programs/foot/dots";
 in
 {
   xdg.configFile."foot".source = config.lib.file.mkOutOfStoreSymlink "${dots}";

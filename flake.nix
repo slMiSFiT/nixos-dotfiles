@@ -32,19 +32,14 @@
     {
       nixosConfigurations = {
         blackstone = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            host = "blackstone";
+            username = "misfit";
+          };
           modules = [
             ./hosts/blackstone
             nixos-hardware.nixosModules.lenovo-thinkpad-t470s
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit inputs; };
-                users.misfit = import ./home;
-                backupFileExtension = "backup";
-              };
-            }
           ];
         };
       };

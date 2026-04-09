@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  dots = "${config.home.homeDirectory}/.nixos-config/home/programs/nvim/dots";
+  dots = "${config.home.homeDirectory}/.nixos-config/modules/home/programs/nvim/dots";
 in
 {
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${dots}";

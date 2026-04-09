@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 {
   # services.openssh = {
   #   enable = true;
@@ -10,7 +10,7 @@
   #     MaxAuthTries = 3;
   #     ClientAliveInterval = 300;
   #     ClientAliveCountMax = 2;
-  #     AllowUsers = [ "misfitgoy" ];
+  #     AllowUsers = [ "${username}" ];
   #   };
   #   openFirewall = true;
   # };

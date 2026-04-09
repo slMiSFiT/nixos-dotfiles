@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  dots = "${config.home.homeDirectory}/.nixos-config/home/programs/swaync/dots";
+  dots = "${config.home.homeDirectory}/.nixos-config/modules/home/programs/swaync/dots";
 in
 {
   xdg.configFile."swaync".source = config.lib.file.mkOutOfStoreSymlink "${dots}";

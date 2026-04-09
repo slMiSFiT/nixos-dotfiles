@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  host,
+  ...
+}:
 {
   imports = [
     ./eza.nix
@@ -21,9 +26,9 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      nrs = "nixos-rebuild switch --flake ~/.nixos-config#blackstone --sudo";
-      nrt = "nixos-rebuild test --flake ~/.nixos-config#blackstone --sudo";
-      nrb = "nixos-rebuild boot --flake ~/.nixos-config#blackstone --sudo";
+      nrs = "nixos-rebuild switch --flake ~/.nixos-config#${host} --sudo";
+      nrt = "nixos-rebuild test --flake ~/.nixos-config#${host} --sudo";
+      nrb = "nixos-rebuild boot --flake ~/.nixos-config#${host} --sudo";
       nrr = "nixos-rebuild switch --rollback --sudo"; # prev gen
       ncg = "nix-collect-garbage -d ";
       nca = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";

@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  dots = "${config.home.homeDirectory}/.nixos-config/home/programs/hyprland/dots";
+  dots = "${config.home.homeDirectory}/.nixos-config/modules/home/programs/hyprland/dots";
 in
 {
 

@@ -6,6 +6,6 @@
       enable = true;
       extraArgs = "--keep-since 7d --keep 5";
     };
-    flake = "/home/misfit/.nixos-config";
+    flake = "/home/${username}/.nixos-config";
   };
 }

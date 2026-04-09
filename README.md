@@ -1,49 +1,50 @@
 # nixos-dotfiles
 
-My personal NixOS configuration using flakes and home-manager.
+Personal NixOS configuration using flakes and home-manager.
 
-> [!IMPORTANT]
-> This configuration is tailored to my hardware — do not apply it directly.
-> Use it as a reference or fork it and adapt it to your own setup.
+> [!WARNING]
+> Hardware-specific. Do not apply directly — use as reference or fork and adapt.
 
----
+## Structure
 
-## Before You Use This
+```
+.
+├── flake.nix
+├── hosts/
+│   └── <hostname>/          # host-specific config & hardware
+├── modules/
+│   ├── core/                # user, boot, nix settings
+│   ├── home/                # home-manager (programs, shell, services)
+│   └── extra/               # ...
+```
 
-If you're adapting this for your own machine, make sure to update:
+## Adapting to your machine
 
-- **Hostname** — defined in `flake.nix`, `hosts/<hostname>/default.nix` and shell aliases.
-- **Username** — used throughout the config and home-manager modules
-- **Screen resolution & refresh rate** — set in the hyprland config for your display
-- **Hardware configuration** — always regenerate with `nixos-generate-config` on your machine
+Before building, update:
 
----
+- `flake.nix` — `username` and hostname under `nixosConfigurations`
+- `hosts/<hostname>/hardware-configuration.nix` — regenerate with `nixos-generate-config`
+- Hyprland config — screen resolution and refresh rate
 
 ## Installation
 
 ```bash
-# 1. Clone the repo
+# 1. Clone
 git clone https://github.com/slMiSFiT/nixos-dotfiles ~/.nixos-config
 
-# 2. Copy your machine's hardware config
-cp /etc/nixos/hardware-configuration.nix ~/.nixos/hosts/<hostname>/
+# 2. Replace hardware config
+cp /etc/nixos/hardware-configuration.nix hosts/<hostname>/
 
-# 3. Build and switch (boots into new config on next reboot)
-nixos-rebuild boot --flake ~/.nixos-config#<hostname> --sudo
-
+# 3. Build
+sudo nixos-rebuild switch --flake ~/.nixos-config#<hostname>
 ```
 
----
+## Post-install
 
-## Post Installation
+Manual steps after a fresh build:
 
-Things that can't/won't be automated and need to be done manually after a fresh install:
-
+- [ ] Restore backed up files
 - [ ] Update Syncthing device IDs
-- [ ] Set up browser (extensions, settings, account)
-- [ ] Restore backed up files if any
-
----
 
 ## License
 

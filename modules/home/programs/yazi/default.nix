@@ -1,6 +1,6 @@
 { config, ... }:
 #let
-#  dots = "${config.home.homeDirectory}/.nixos-config/home/programs/yazi/dots";
+#  dots = "${config.home.homeDirectory}/.nixos-config/modules/home/programs/yazi/dots";
 #in
 {
 
