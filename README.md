@@ -23,6 +23,7 @@ Personal NixOS configuration using flakes and home-manager.
 Before building, update:
 
 - `flake.nix` — `username` and hostname under `nixosConfigurations`
+- `flake.nix` — remove the `nixos-hardware` module or replace it with one matching your machine (see [supported hardware](https://github.com/NixOS/nixos-hardware))
 - `hosts/<hostname>/hardware-configuration.nix` — regenerate with `nixos-generate-config`
 - Hyprland config — screen resolution and refresh rate
 
