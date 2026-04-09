@@ -5,6 +5,7 @@
     ./fzf.nix
     ./bat.nix
     ./git.nix
+    ./tealdeer.nix
   ];
 
   home.packages = with pkgs; [

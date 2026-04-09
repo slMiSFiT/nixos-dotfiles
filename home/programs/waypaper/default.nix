@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 let
-  dir = builtins.toString ./.;
+  dots = "${config.home.homeDirectory}/.nixos-config/home/programs/waypaper/dots";
 in
 {
-  xdg.configFile."waypaper".source = config.lib.file.mkOutOfStoreSymlink "${dir}/config";
+  xdg.configFile."waypaper".source = config.lib.file.mkOutOfStoreSymlink "${dots}";
 
   home.packages = with pkgs; [ waypaper ];
 }

@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 let
-  dir = builtins.toString ./.;
+  dots = "${config.home.homeDirectory}/.nixos-config/home/programs/hyprland/dots";
 in
 {
 
-  xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${dir}/config";
+  xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${dots}";
 
   services.hyprpolkitagent.enable = true;
   services.cliphist.enable = true;
@@ -21,6 +21,7 @@ in
     trash-cli
     wl-clipboard
     wl-clip-persist
+    wl-screenrec
     hyprlock
     hypridle
     hyprpaper

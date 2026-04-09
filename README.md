@@ -42,8 +42,6 @@ Things that can't/won't be automated and need to be done manually after a fresh 
 - [ ] Update Syncthing device IDs
 - [ ] Set up browser (extensions, settings, account)
 - [ ] Restore backed up files if any
-- [ ] Restore/Set up SSH/GPG keys
-- [ ] Update firmware (fwupd)
 
 ---
 

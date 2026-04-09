@@ -24,6 +24,10 @@
             "key": "System       "
         },
         {
+            "type": "host",
+            "key": "Host         "
+        },
+        {
             "type": "kernel",
             "key": "Kernel       "
         },

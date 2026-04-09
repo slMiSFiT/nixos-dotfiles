@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 let
-  dir = builtins.toString ./.;
+  dots = "${config.home.homeDirectory}/.nixos-config/home/programs/swaync/dots";
 in
 {
-  xdg.configFile."swaync".source = config.lib.file.mkOutOfStoreSymlink "${dir}/config";
+  xdg.configFile."swaync".source = config.lib.file.mkOutOfStoreSymlink "${dots}";
 
   home.packages = with pkgs; [ swaynotificationcenter ];
 }

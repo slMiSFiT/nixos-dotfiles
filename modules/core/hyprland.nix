@@ -1,17 +1,6 @@
 { pkgs, ... }:
 {
 
-  services.displayManager = {
-    ly = {
-      enable = true;
-      settings = {
-        vi_mode = true;
-        #animation = "matrix";
-        clock = "%d - %H:%M";
-      };
-    };
-  };
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -30,7 +19,10 @@
       ];
     };
 
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
   };
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities

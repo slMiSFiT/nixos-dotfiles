@@ -1,7 +1,9 @@
 {
-  description = "My NixOS from Scratch";
+  description = "My NixOS configuration from Scratch";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -23,6 +25,7 @@
     inputs@{
       self,
       nixpkgs,
+      nixos-hardware,
       home-manager,
       ...
     }:
@@ -31,6 +34,7 @@
         blackstone = nixpkgs.lib.nixosSystem {
           modules = [
             ./hosts/blackstone
+            nixos-hardware.nixosModules.lenovo-thinkpad-t470s
             home-manager.nixosModules.home-manager
             {
               home-manager = {

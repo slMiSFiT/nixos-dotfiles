@@ -8,7 +8,6 @@
     ./fuzzel
     ./hyprland
     ./nvim
-    #./rofi
     ./swaync
     ./waybar
     ./waypaper
@@ -18,7 +17,6 @@
     ./cava.nix
     ./mpv.nix
     ./rmpc.nix
-    ./tealdeer.nix
     ./yt-dlp.nix
   ];
 }
