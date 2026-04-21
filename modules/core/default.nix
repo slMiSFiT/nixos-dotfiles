@@ -6,7 +6,6 @@
     ./bootloader.nix
     ./hardware.nix
     ./hyprland.nix
-    ./ly.nix
     ./network.nix
     ./nh.nix
     ./performance.nix

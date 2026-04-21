@@ -40,13 +40,6 @@ cp /etc/nixos/hardware-configuration.nix hosts/<hostname>/
 sudo nixos-rebuild switch --flake ~/.nixos-config#<hostname>
 ```
 
-## Post-install
-
-Manual steps after a fresh build:
-
-- [ ] Restore backed up files
-- [ ] Update Syncthing device IDs
-
 ## License
 
 [MIT](./LICENSE)
